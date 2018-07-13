@@ -11,9 +11,11 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
+  boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = ["resume=/dev/sda2"];
+  boot.kernelParams = ["resume=/dev/nvme0n1p2"];
+  #boot.initrd.checkJournalingFS = false;  ## disable fsck at startup:
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -55,55 +57,107 @@
     git
     curl
     wget
-
+    #gnused 
+    xsel
+    less
+    jq
+    htop
+    psutils
     w3m
     mlocate
-    
+    unzip
+    xz
+    sl 
+    lolcat
+    figlet
+
+
     # man 
     man-db
 
+    # cipher 
+    openssl
+    openssh
+    gnupg
+
     # network
     irssi
+    iptables
+    nettools
 
     # X 
     xcalib
     xorg.xmodmap
     xlibs.xmodmap
     xlibs.xbacklight
+    xterm
+    tty-clock
 
-    python
-    python3
+    # tk/tcl 
+    tk 
+    tcl
+    
+    # 
+    mesa
+    freeglut
 
-    openssl
-    openssh
 
-    thunderbird
-
-    jq
-    htop
+    # Analysis Tools
     fzf
-    gnupg
-    gcc
-    gdb
-    #linuxPackages.perf                  ## for a kernel package
     tcpdump
-    config.boot.kernelPackages.perf    ## for a current kernel package, 
-                                        ## thanking @gchristensen  
+    #linuxPackages.perf             ## for a kernel package
+    config.boot.kernelPackages.perf ## for a current kernel package, 
+                                    ## thanking @gchristensen  
     acpi
 
+    # Dropbox
     dropbox
-    busybox
-    # Use dropbox via nix-env -i dropbox
-    # dropbox-cli 
-    # xfce.thunar-dropbox-plugin
-    firefoxWrapper
+    xfce.thunar-dropbox-plugin
 
     # Music/Sound/Video
+    pulseaudioLight  
+    #pulseaudioFull
+    dvdplusrwtools
+    dvdauthor
+    espeak
+    #festival
+    #festival-english
+    #festival-us
     ffmpeg
+    mplayer
+    sox
+
+    # Browser 
+    chromium
+    firefoxWrapper
+
+    # Mail 
+    thunderbird
 
     # PDF
     kdeApplications.okular
     mupdf
+
+    # ICON
+    numix-icon-theme-circle
+    numix-gtk-theme
+
+    # Languages
+    gcc
+    glibc
+    gnumake
+    nodejs
+    gdb
+    python
+    python3
+    ruby
+    stack 
+    opam 
+
+    # Applications
+    qrencode
+    vokoscreen
+    gimp
 
   ];
 
