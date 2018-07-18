@@ -5,49 +5,83 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    imports =
+        [ # Include the results of the hardware scan.
+        ./hardware-configuration.nix
+        ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = ["resume=/dev/nvme0n1p2"];
-  #boot.initrd.checkJournalingFS = false;  ## disable fsck at startup:
+    hardware = {
+        opengl.driSupport32Bit  = true;
+        pulseaudio.support32Bit = true;
+        bluetooth.enable        = true;
+    };
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
-  networking.nameservers = ["8.8.8.8"];
+    boot = {
+        loader = {
+            grub = {
+#               enable = true;
+                device = "/dev/nvme0n1";
+#               extraConfig = 
+#               "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/nvme0n1p2\"";
+#               efiSupport = true;
+#               forceInstall = true;
+            };
+            systemd-boot.enable = true;     # Formerly  gummiboot.enable
+            efi.canTouchEfiVariables = true;
+        };
+        consoleLogLevel = 7;
+        kernelParams = [ "resume=/dev/nvme0n1p2" ];
+        blacklistedKernelModules = ["nouveau"];
+        initrd.checkJournalingFS = false;
+    };
 
-  # Select internationalisation properties.
-  #i18n = {
-    #consoleFont = "Lat2-Terminus16";
-    #consoleKeyMap = "us";
-    #defaultLocale = "en_US.UTF-8";
-  #};
-  i18n.inputMethod = {
-      enabled = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [ anthy m17n ];
-  };
+    networking = {
+        hostName    = "ghasshee";
+        networkmanager.enable = true;
+        nameservers = [ "8.8.8.8" "8.8.4.4" ];
+        firewall = {
+            allowPing = true;
+#           allowedTCPPorts = [ 8080 ];
+#           allowedUDPPorts = [ ... ];
+#           enable = false;
+        };
+    };
 
-  # Set your time zone.
-  time.timeZone = "Asia/Tokyo";
+    i18n = {
+        consoleFont = "Lat2-Terminus16";
+        consoleKeyMap = "us";
+        defaultLocale = "en_US.UTF-8";
+        inputMethod = {
+            enabled = "ibus";
+            ibus.engines = with pkgs.ibus-engines; [ anthy m17n ];
+            };
+    };
+    
+    time.timeZone = "Asia/Tokyo";
+    
+    nix.binaryCaches = [http://cache.nixos.org http://hydra.nixos.org];
+    nixpkgs.config = {
+        allowUnfree = true;
+        allowBroken = true;
+        firefox.icedtea = true;
+        chromium = {
+#           enablePepperFlash   = true;
+#           enablePepperPDF     = true;
+#           enableWideVine      = true;
+        };
+    };
 
-  nix.binaryCaches = [ http://cache.nixos.org http://http://hydra.nixos.org ];
+    environment.etc."fuse.conf".text = ''
+        user_allow_other
+    '';
+        
+    # List packages installed in system profile. To search by name, run
+    # $ nix-env -qaP | grep wget
 
-  nixpkgs.config = {
-      allowUnfree = true;
-
-      firefox.icedtea = true;
-  };
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
+    nix-repl
     networkmanager
+    acpi
     
     # base
     zsh
@@ -71,6 +105,8 @@
     lolcat
     figlet
 
+    # Dictionary 
+    sdcv 
 
     # man 
     man-db
@@ -101,31 +137,27 @@
     mesa
     freeglut
 
-
     # Analysis Tools
     fzf
     tcpdump
-    #linuxPackages.perf             ## for a kernel package
-    config.boot.kernelPackages.perf ## for a current kernel package, 
-                                    ## thanking @gchristensen  
-    acpi
+    #linuxPackages.perf               # for a kernel package
+    config.boot.kernelPackages.perf   # for a current kernel package, 
 
     # Dropbox
-    dropbox
-    xfce.thunar-dropbox-plugin
+    dropbox     xfce.thunar-dropbox-plugin
 
     # Music/Sound/Video
-    pulseaudioLight  
-    #pulseaudioFull
+    pulseaudioLight     # pulseaudioFull
     dvdplusrwtools
     dvdauthor
-    espeak
-    #festival
-    #festival-english
-    #festival-us
+    espeak              # festival festival-english festival-us
     ffmpeg
     mplayer
     sox
+    gnome3.totem vlc    # kde4.dragon kde4.kmix 
+
+    # Virtualization and Containers
+    docker python27Packages.docker_compose
 
     # Browser 
     chromium
@@ -143,112 +175,104 @@
     numix-gtk-theme
 
     # Languages
-    gcc
-    glibc
-    gnumake
-    nodejs
+    stdenv 
+    makeWrapper gnumake automake autoconf
+    gcc glibc 
     gdb
-    python
-    python3
+    nodejs
     ruby
     stack 
-    opam 
+    coq
+
+    # Python
+    python27Full python3
+    python34Packages.pip
+    pythonPackages.ipython
+    pypyPackages.virtualenv
+    
+    # Haskell
+    haskellPackages.cabal-install haskellPackages.ghc
+
+    ocaml
+    ocamlPackages.utop
+    ocamlPackages.camlp4
+    opam
 
     # Applications
     qrencode
     vokoscreen
     gimp
+    youtube-dl
+    skype 
+    evince      # Document viewer  
+    gnome3.eog  # image viewer
+    tesseract   # OCR
 
-  ];
-
-  hardware.bluetooth.enable = true;
-  
-
-  #systemd.user.services.dropbox = {
-  #    restartIfChanged = true;
-  #    enable = true;
-  #    serviceConfig = {
-  #        ExecStart = "${pkgs.dropbox}/bin/dropbox";
-  #        PassEnvironment = "DISPLAY";
-  #    };
-  #};
+    # Game
+    minecraft
+    ];
 
 
 
-  services.redshift = {
-      enable = true;
-      latitude = "40";
-      longitude = "135";
-  };
+    services = {
+        
+        acpid.enable = true;
+        
+        redshift = {
+            enable = true;
+            latitude = "40";
+            longitude = "135";
+        };
+        
+        openssh.enable = true;
 
-  # List services that you want to enable:
+        xserver = {
+            enable = true;
+            layout = "us";
+            xkbOptions = "eurosign:e";
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+            displayManager.slim.enable = true;
+            desktopManager.xfce.enable = true;
+#           desktopManager.kde4.enable = true;
+       
+            synaptics = {
+                enable = true;
+#               tapButtons = true;
+                twoFingerScroll = true;
+                horizontalScroll = true;
+                vertEdgeScroll = false;
+                accelFactor = "0.015";
+                buttonsMap = [1 3 2];
+                fingersMap = [1 3 2];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+                additionalOptions = ''
+                    Option "VertScrollDelta" "50"
+                    Option "HorizScrollDelta" "-20"
+                '';
+            };
+        };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-  #services.xserver.layout = "us";
-  #services.xserver.xkbOptions = "eurosign:e";
-
-  # Enable the KDE Desktop Environment.
-  #services.xserver.displayManager.slim.enable = true;
-  #services.xserver.desktopManager.xfce.enable = true;
-  #services.xserver.synaptics.enable = true;
-  
-  services.xserver = {
-      enable = true;
-      layout = "us";
-      xkbOptions = "eurosign:e";
-
-      displayManager.slim.enable = true;
-      desktopManager.xfce.enable = true;
-
-      synaptics = {
-          enable = true;
-          #tapButtons = true;
-          twoFingerScroll = true;
-          horizontalScroll = true;
-          #vertEdgeScroll = false;
-          accelFactor = "0.015";
-          buttonsMap = [1 3 2];
-          fingersMap = [1 3 2];
-
-          additionalOptions = ''
-            Option "VertScrollDelta" "50"
-            Option "HorizScrollDelta" "-20"
-          '';
-      };
+        printing = {
+            enable = true; # enable CUPS Printing 
+            drivers = [pkgs.gutenprint pkgs.hplipWithPlugin ];
+        };
       
-      #multitouch.enable = true;
-      #multitouch.invertScroll = true;
-  };
+#       multitouch.enable = true;
+#       multitouch.invertScroll = true;
+    };
 
-  # Shells
-  programs.zsh.enable = true;
-  users.extraUsers.ghasshee = {
-	isNormalUser = true;
-	home = "/home/ghasshee";
-	extraGroups = ["wheel" "networkmanager"];
-      	shell = pkgs.zsh;
-  };
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.extraUsers.guest = {
-  #   isNormalUser = true;
-  #   uid = 1000;
-  # };
+    # Shells
+    programs.zsh.enable = true;
+    # User ( Do not forget to set with `passwd`
+    users.extraUsers.ghasshee = {
+	    isNormalUser    = true;
+	    home            = "/home/ghasshee";
+	    extraGroups     = ["wheel" "networkmanager"];
+      	shell           = "/run/current-system/sw/bin/zsh";
+        uid = 1000;
+    };
 
-  # The NixOS release to be compatible with for stateful data such as databases.
-  # system.stateVersion = "18.03";
+    system.stateVersion = "18.03";
 
 }
 
