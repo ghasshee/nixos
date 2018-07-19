@@ -13,12 +13,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
+    { device = "/dev/disk/by-uuid/c53406c5-c2f2-4b76-83fe-45a8d7c58102";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/878ab35c-0143-4543-8891-91b8a2895cd8";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
+    [ { device = "/dev/disk/by-uuid/5812a092-5bba-41f0-a61f-b33e9aa8e669"; }
     ];
 
   nix.maxJobs = lib.mkDefault 8;

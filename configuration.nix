@@ -17,19 +17,25 @@
     };
 
     boot = {
+        initrd.luks.devices = [
+            {
+                name = "root";
+                device = "/dev/nvme0n1p2";
+                preLVM = true;
+            }];
         loader = {
             grub = {
-#               enable = true;
+                enable = true;
                 device = "/dev/nvme0n1";
-#               extraConfig = 
-#               "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/nvme0n1p2\"";
+                extraConfig = 
+                "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/nvme0n1p2\"";
 #               efiSupport = true;
 #               forceInstall = true;
             };
-            systemd-boot.enable = true;     # Formerly  gummiboot.enable
-            efi.canTouchEfiVariables = true;
+#           systemd-boot.enable = true;     # Formerly  gummiboot.enable
+#           efi.canTouchEfiVariables = true;
         };
-        consoleLogLevel = 7;
+        consoleLogLevel = 5;
         kernelParams = [ "resume=/dev/nvme0n1p2" ];
         blacklistedKernelModules = ["nouveau"];
         initrd.checkJournalingFS = false;
@@ -64,11 +70,6 @@
         allowUnfree = true;
         allowBroken = true;
         firefox.icedtea = true;
-        chromium = {
-#           enablePepperFlash   = true;
-#           enablePepperPDF     = true;
-#           enableWideVine      = true;
-        };
     };
 
     environment.etc."fuse.conf".text = ''
@@ -79,137 +80,138 @@
     # $ nix-env -qaP | grep wget
 
     environment.systemPackages = with pkgs; [
-    nix-repl
-    networkmanager
-    acpi
+nix-repl
+networkmanager
+acpi
+
+# base
+zsh
+tree
+vim
+tmux
+git
+curl
+wget
+#gnused 
+xsel
+less
+jq
+htop
+psutils
+w3m
+mlocate
+unzip
+xz
+sl 
+lolcat
+figlet
+sshfs
+
+# Dictionary 
+sdcv 
+
+# man 
+man-db
+
+# cipher 
+openssl
+openssh
+gnupg
+
+# network
+irssi
+iptables
+nettools
+
+# X 
+xcalib
+xorg.xmodmap
+xlibs.xmodmap
+xlibs.xbacklight
+xterm
+tty-clock
+
+# tk/tcl 
+tk 
+tcl
     
-    # base
-    zsh
-    tree
-    vim
-    tmux
-    git
-    curl
-    wget
-    #gnused 
-    xsel
-    less
-    jq
-    htop
-    psutils
-    w3m
-    mlocate
-    unzip
-    xz
-    sl 
-    lolcat
-    figlet
+# 
+mesa
+freeglut
 
-    # Dictionary 
-    sdcv 
+# Analysis Tools
+fzf
+tcpdump
+#linuxPackages.perf               # for a kernel package
+config.boot.kernelPackages.perf   # for a current kernel package, 
 
-    # man 
-    man-db
+# Dropbox
+dropbox     xfce.thunar-dropbox-plugin
 
-    # cipher 
-    openssl
-    openssh
-    gnupg
+# Music/Sound/Video
+pulseaudioLight     # pulseaudioFull
+dvdplusrwtools
+dvdauthor
+espeak              # festival festival-english festival-us
+ffmpeg
+mplayer
+sox
+gnome3.totem vlc    # kde4.dragon kde4.kmix 
 
-    # network
-    irssi
-    iptables
-    nettools
+# Virtualization and Containers
+docker python27Packages.docker_compose
 
-    # X 
-    xcalib
-    xorg.xmodmap
-    xlibs.xmodmap
-    xlibs.xbacklight
-    xterm
-    tty-clock
+# Browser 
+chromium
+firefoxWrapper
 
-    # tk/tcl 
-    tk 
-    tcl
+# Mail 
+thunderbird
+
+# PDF
+kdeApplications.okular
+mupdf
+
+# ICON
+numix-icon-theme-circle
+numix-gtk-theme
+
+# Languages
+stdenv 
+makeWrapper gnumake automake autoconf
+gcc glibc 
+gdb
+nodejs
+ruby
+stack 
+coq
+
+# Python
+python27Full python3
+python34Packages.pip
+pythonPackages.ipython
+pypyPackages.virtualenv
     
-    # 
-    mesa
-    freeglut
+# Haskell
+haskellPackages.cabal-install haskellPackages.ghc
 
-    # Analysis Tools
-    fzf
-    tcpdump
-    #linuxPackages.perf               # for a kernel package
-    config.boot.kernelPackages.perf   # for a current kernel package, 
+ocaml
+ocamlPackages.utop
+ocamlPackages.camlp4
+opam
 
-    # Dropbox
-    dropbox     xfce.thunar-dropbox-plugin
+# Applications
+qrencode
+vokoscreen
+gimp
+youtube-dl
+skype 
+evince      # Document viewer  
+gnome3.eog  # image viewer
+tesseract   # OCR
 
-    # Music/Sound/Video
-    pulseaudioLight     # pulseaudioFull
-    dvdplusrwtools
-    dvdauthor
-    espeak              # festival festival-english festival-us
-    ffmpeg
-    mplayer
-    sox
-    gnome3.totem vlc    # kde4.dragon kde4.kmix 
-
-    # Virtualization and Containers
-    docker python27Packages.docker_compose
-
-    # Browser 
-    chromium
-    firefoxWrapper
-
-    # Mail 
-    thunderbird
-
-    # PDF
-    kdeApplications.okular
-    mupdf
-
-    # ICON
-    numix-icon-theme-circle
-    numix-gtk-theme
-
-    # Languages
-    stdenv 
-    makeWrapper gnumake automake autoconf
-    gcc glibc 
-    gdb
-    nodejs
-    ruby
-    stack 
-    coq
-
-    # Python
-    python27Full python3
-    python34Packages.pip
-    pythonPackages.ipython
-    pypyPackages.virtualenv
-    
-    # Haskell
-    haskellPackages.cabal-install haskellPackages.ghc
-
-    ocaml
-    ocamlPackages.utop
-    ocamlPackages.camlp4
-    opam
-
-    # Applications
-    qrencode
-    vokoscreen
-    gimp
-    youtube-dl
-    skype 
-    evince      # Document viewer  
-    gnome3.eog  # image viewer
-    tesseract   # OCR
-
-    # Game
-    minecraft
+# Game
+minecraft
     ];
 
 
