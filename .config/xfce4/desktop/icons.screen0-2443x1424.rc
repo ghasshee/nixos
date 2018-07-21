@@ -1,6 +1,10 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[0ecd7259-8e83-42f3-b2b0-60f90cd5068f]
+row=3
+col=0
+
 [Trash]
 row=0
 col=0

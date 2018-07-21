@@ -92,7 +92,7 @@ tmux
 git
 curl
 wget
-#gnused 
+gnused 
 xsel
 less
 jq
@@ -178,13 +178,18 @@ numix-gtk-theme
 
 # Languages
 stdenv 
+binutils.bintools
 makeWrapper gnumake automake autoconf
+libudev0-shim
 gcc glibc 
 gdb
 nodejs
 ruby
 stack 
 coq
+
+# Rust
+rustup
 
 # Python
 python27Full python3
