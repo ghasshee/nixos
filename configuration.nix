@@ -115,6 +115,7 @@ man-db
 
 # cipher 
 openssl
+openssl.dev
 openssh
 gnupg
 
@@ -126,6 +127,7 @@ nettools
 # X 
 xcalib
 xorg.xmodmap
+xorg.xlibsWrapper
 xlibs.xmodmap
 xlibs.xbacklight
 xterm
@@ -177,10 +179,12 @@ numix-icon-theme-circle
 numix-gtk-theme
 
 # Languages
+#systemd.lib
+#systemd.dev
+#libudev
 stdenv 
 binutils.bintools
-makeWrapper gnumake automake autoconf
-libudev0-shim
+makeWrapper cmake gnumake automake autoconf
 gcc glibc 
 gdb
 nodejs
@@ -193,19 +197,29 @@ rustup
 
 # Python
 python27Full python3
+python27Packages.pygments
 python34Packages.pip
 pythonPackages.ipython
 pypyPackages.virtualenv
     
 # Haskell
-haskellPackages.cabal-install haskellPackages.ghc
+#pkgs.haskellPackages.ghcWithPackages (p: with p; [
+#    ghc
+#    cabal-install
+#    hakyll
+#])
+haskellPackages.cabal-install haskellPackages.ghc 
 
+
+# OCaml
 ocaml
 ocamlPackages.utop
 ocamlPackages.camlp4
 opam
 
 # Applications
+atom 
+jekyll
 qrencode
 vokoscreen
 gimp
@@ -239,6 +253,8 @@ minecraft
             xkbOptions = "eurosign:e";
 
             displayManager.slim.enable = true;
+	    displayManager.slim.defaultUser = "ghasshee";
+	    displayManager.slim.autoLogin = true;
             desktopManager.xfce.enable = true;
 #           desktopManager.kde4.enable = true;
        
