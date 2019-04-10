@@ -17,6 +17,7 @@
     };
 
     boot = {
+        kernelPackages = pkgs.linuxPackages_latest;
         initrd.luks.devices = [
             {
                 name = "root";
@@ -65,7 +66,7 @@
     
     time.timeZone = "Asia/Tokyo";
     
-    nix.binaryCaches = [http://cache.nixos.org http://hydra.nixos.org];
+    nix.binaryCaches = [http://cache.nixos.org];
     nixpkgs.config = {
         allowUnfree = true;
         allowBroken = true;
@@ -78,165 +79,141 @@
         
     # List packages installed in system profile. To search by name, run
     # $ nix-env -qaP | grep wget
-
-    environment.systemPackages = with pkgs; [
-nix-repl
-networkmanager
-acpi
-
-# base
-zsh
-tree
-vim
-tmux
-git
-curl
-wget
-gnused 
-xsel
-less
-jq
-htop
-psutils
-w3m
-mlocate
-unzip
-xz
-sl 
-lolcat
-figlet
-sshfs
-
-# Dictionary 
-sdcv 
-
-# man 
-man-db
-
-# cipher 
-openssl
-openssl.dev
-openssh
-gnupg
-
-# network
-irssi
-iptables
-nettools
-
-# X 
-xcalib
-xorg.xmodmap
-xorg.xlibsWrapper
-xlibs.xmodmap
-xlibs.xbacklight
-xterm
-tty-clock
-
-# tk/tcl 
-tk 
-tcl
+    environment.systemPackages = 
+    let py  = with pkgs.python36Packages; [
+            ]; 
+        sys = with pkgs; [
+            nix-repl
+            networkmanager
+            acpi
     
-# 
-mesa
-freeglut
+        # base
+            fish zsh 
+            vim bvi tmux w3m
+            git curl wget gnused xsel
+            tree less jq mlocate
+            unzip xz
+            sl lolcat figlet
+            bc          # calculator
+            at          # scheduled process execution
+            sdcv        # Dictionary  
+            man-db      # man
+            manpages
 
-# Analysis Tools
-fzf
-tcpdump
-#linuxPackages.perf               # for a kernel package
-config.boot.kernelPackages.perf   # for a current kernel package, 
-
-# Dropbox
-dropbox     xfce.thunar-dropbox-plugin
-
-# Music/Sound/Video
-pulseaudioLight     # pulseaudioFull
-dvdplusrwtools
-dvdauthor
-espeak              # festival festival-english festival-us
-ffmpeg
-mplayer
-sox
-gnome3.totem vlc    # kde4.dragon kde4.kmix 
-
-# Virtualization and Containers
-docker python27Packages.docker_compose
-
-# Browser 
-chromium
-firefoxWrapper
-
-# Mail 
-thunderbird
-
-# PDF
-kdeApplications.okular
-mupdf
-
-# ICON
-numix-icon-theme-circle
-numix-gtk-theme
-
-# Languages
-#systemd.lib
-#systemd.dev
-#libudev
-stdenv 
-binutils.bintools
-makeWrapper cmake gnumake automake autoconf
-gcc glibc 
-gdb
-nodejs
-ruby
-stack 
-coq
-
-# Rust
-rustup
-
-# Python
-python27Full python3
-python27Packages.pygments
-python34Packages.pip
-pythonPackages.ipython
-pypyPackages.virtualenv
-    
-# Haskell
-#pkgs.haskellPackages.ghcWithPackages (p: with p; [
-#    ghc
-#    cabal-install
-#    hakyll
-#])
-haskellPackages.cabal-install haskellPackages.ghc 
-
-
-# OCaml
-ocaml
-ocamlPackages.utop
-ocamlPackages.camlp4
-opam
-
-# Applications
-atom 
-jekyll
-qrencode
-vokoscreen
-gimp
-youtube-dl
-skype 
-evince      # Document viewer  
-gnome3.eog  # image viewer
-tesseract   # OCR
-
-# Game
-minecraft
-    ];
-
-
-
-    services = {
+        # process managesment
+            lsof psutils htop
+            psmisc      # killall, pstree, ..etc
+            fzf tcpdump
+            ## linuxPackages.perf               # for a kernel package
+            config.boot.kernelPackages.perf   # for a current kernel package, 
         
+        # security 
+            openssl.dev openssh gnupg
+            sshfs stunnel  
+
+        # network 
+            iptables nettools irssi
+        
+        # X 
+            xorg.xmodmap xorg.xlibsWrapper
+            xlibs.xmodmap xlibs.xbacklight xterm tty-clock xcalib 
+            tk tcl          # tk/tcl 
+    
+        # Icon
+            numix-icon-theme-circle numix-gtk-theme
+
+        # GPU-things
+            mesa freeglut
+
+        # Music/Sound/Video
+            pulseaudioLight     # pulseaudioFull
+            dvdplusrwtools dvdauthor
+            espeak              # festival festival-english festival-us
+            ffmpeg mplayer sox
+            gnome3.totem vlc    # kde4.dragon kde4.kmix 
+
+        # Virtualization and Containers
+            docker python27Packages.docker_compose
+
+        # Browser 
+            chromium firefoxWrapper
+
+        # Mail 
+            thunderbird
+
+        # PDF
+            kdeApplications.okular mupdf evince     
+
+        # Math
+            sage 
+        # Applications
+            # dropbox 
+            dropbox-cli  
+            xorg.libxshmfence
+            # xfce4-12.thunar-dropbox-plugin
+            # xfce.thunar-dropbox-plugin
+            atom 
+            qrencode
+            vokoscreen
+            maim        ## command-line screenshot
+            gimp
+            youtube-dl
+            gnome3.eog  # image viewer
+            tesseract   # OCR
+            djvu2pdf
+            timidity        # MIDI
+            minecraft       # Game
+
+        ###################
+        ###  Languages  ###
+        ###################
+        # systemd.lib systemd.dev libudev
+            stdenv  binutils.bintools
+            makeWrapper cmake automake autoconf glibc 
+            gdb
+            nodejs ruby jekyll
+
+        # Python
+            python27Full python27Packages.pygments
+            (python36.withPackages (x: with x; [
+                python pip numpy matplotlib toolz pytest ipython jupyter virtualenvwrapper  
+                tk tkinter
+                numpy scipy networkx matplotlib 
+                toolz
+                ]))
+            pypyPackages.virtualenv
+
+        # Haskell 
+            (pkgs.haskellPackages.ghcWithPackages(p: with p; [
+                cabal-install hoogle 
+                gnuplot GLUT
+                hip hakyll 
+                hmatrix algebra effect-monad 
+                vector-sized
+                # megaparsec
+                base58-bytestring secp256k1 vector-sized mwc-random cryptonite ## bitcoin  
+                ]))
+
+        # OCaml
+            ocaml opam 
+            ocamlPackages.utop ocamlPackages.camlp4 
+            ocamlPackages.findlib ocamlPackages.batteries
+
+        # coq
+            coq coqPackages_8_6.ssreflect
+
+        # Rust with C dependencies 
+            rustup cargo 
+            binutils gcc gnumake 
+            openssl pkgconfig 
+
+    
+                ]; in py ++ sys;
+
+
+
+        services = {
+            
         acpid.enable = true;
         
         redshift = {
@@ -286,6 +263,10 @@ minecraft
 
     # Shells
     programs.zsh.enable = true;
+    # programs.zsh.promptInit = "";
+    # environment.promptInit = "";
+    # programs.zsh.interactiveShellInit = "";
+    # environment.interactiveShellInit = ""; 
     # User ( Do not forget to set with `passwd`
     users.extraUsers.ghasshee = {
 	    isNormalUser    = true;
@@ -295,7 +276,7 @@ minecraft
         uid = 1000;
     };
 
-    system.stateVersion = "18.03";
+    system.stateVersion = "18.09";
 
 }
 
