@@ -21,15 +21,15 @@
         initrd.luks.devices = [
             {
                 name = "root";
-                device = "/dev/nvme0n1p2";
+                device = "/dev/sda2";
                 preLVM = true;
             }];
         loader = {
             grub = {
                 enable = true;
-                device = "/dev/nvme0n1";
+                device = "/dev/sda";
                 extraConfig = 
-                "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/nvme0n1p2\"";
+                "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/sda2\"";
 #               efiSupport = true;
 #               forceInstall = true;
             };
@@ -83,7 +83,6 @@
     let py  = with pkgs.python36Packages; [
             ]; 
         sys = with pkgs; [
-            nix-repl
             networkmanager
             acpi
     
