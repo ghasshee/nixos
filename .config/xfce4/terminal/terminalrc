@@ -1,5 +1,4 @@
 [Configuration]
-FontName=Monospace 14
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -17,4 +16,6 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ColorPalette=#e30e73a673a6;#aaaa00000000;#7ffff39c7fff;#aaaa55550000;#793fab11f800;#aaaa0000aaaa;#3cd4ba89d3d3;#aaaaaaaaaaaa;#a7d69e5b9e5b;#ffff55555555;#5555ffff5555;#ffffffff5555;#83d283d2fb41;#ffff5555ffff;#75ade9a4f5ac;#ffffffffffff
+FontName=Monospace 13
+ColorBackground=#35e943332542
 

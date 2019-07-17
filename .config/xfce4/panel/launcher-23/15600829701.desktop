@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+Name=Vivaldi
+GenericName=Web Browser
+Comment=Access the Internet
+Exec=/nix/store/ybvv2p8iqvp1im3imqbp8k89i4gasc1m-vivaldi-2.3.1440.60-1/bin/vivaldi %U
+StartupNotify=true
+Terminal=false
+Icon=vivaldi
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Actions=new-window;new-private-window;
+X-XFCE-Source=file:///run/current-system/sw/share/applications/vivaldi-stable.desktop
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/nix/store/ybvv2p8iqvp1im3imqbp8k89i4gasc1m-vivaldi-2.3.1440.60-1/bin/vivaldi --new-window
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=/nix/store/ybvv2p8iqvp1im3imqbp8k89i4gasc1m-vivaldi-2.3.1440.60-1/bin/vivaldi --incognito

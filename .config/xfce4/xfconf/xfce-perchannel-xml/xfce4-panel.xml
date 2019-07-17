@@ -21,6 +21,7 @@
         <value type="int" value="6"/>
         <value type="int" value="2"/>
         <value type="int" value="22"/>
+        <value type="int" value="19"/>
       </property>
       <property name="mode" type="uint" value="2"/>
     </property>
@@ -37,6 +38,7 @@
         <value type="int" value="18"/>
         <value type="int" value="12"/>
         <value type="int" value="11"/>
+        <value type="int" value="23"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
       </property>
@@ -71,11 +73,12 @@
       <property name="names-visible" type="array">
         <value type="string" value="thunar"/>
         <value type="string" value="networkmanager applet"/>
-        <value type="string" value="vokoscreen"/>
-        <value type="string" value="skypeforlinux"/>
-        <value type="string" value="ibus-ui-gtk3"/>
         <value type="string" value="ibus panel"/>
+        <value type="string" value="ibus-ui-gtk3"/>
+        <value type="string" value="vokoscreen"/>
+        <value type="string" value="dropbox"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="skypeforlinux"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="showdesktop"/>
@@ -132,6 +135,12 @@
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15501254361.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-19" type="string" value="power-manager-plugin"/>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15600829701.desktop"/>
       </property>
     </property>
   </property>
