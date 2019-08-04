@@ -48,7 +48,7 @@
     };
     nix                 =   {
         binaryCaches        = [http://cache.nixos.org];
-        #package            = pkgs.nix1;  ## this updates to 19.03
+        package            = pkgs.nix1;  ## this updates to 19.03
     };
     nixpkgs.config      = {
         allowUnfree         = true;
@@ -83,12 +83,12 @@
                         cryptonite secp256k1-haskell # secp256k1 
                         ]))];
                 ml              = with ocamlPackages; [
-                    ocaml opam 
+                    ocaml opam labltk
                     utop camlp4 findlib batteries ]; 
 
                 sys             = [
 
-                    acpi zsh vim bvi tmux w3m git curl wget gnused xsel
+                    acpi zsh vim bvi tmux w3m git curl wget gnused xsel rename 
                     tree less jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc 
                     openssl.dev openssh gnupg sshfs stunnel         ## Security                 
                     networkmanager iptables nettools irssi tcpdump  ## Network 
@@ -123,7 +123,7 @@
                 
                 # Languages  
                     stdenv  binutils.bintools makeWrapper cmake automake autoconf glibc gdb 
-                    binutils gcc gnumake openssl pkgconfig 
+                    binutils gcc gnumake openssl pkgconfig rlwrap
                     nodejs ruby jekyll              ## Ruby / Nodejs
                     idris vimPlugins.idris-vim      ## Idris
                     coq coqPackages_8_6.ssreflect   ## Coq
