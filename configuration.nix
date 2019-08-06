@@ -2,28 +2,36 @@
 # SEARCH PKGs   =>  $ nix-env -qaP | grep wget
 
 { config, pkgs, ... }:
+
+let 
+	myDevice 	= "/dev/nvme0n1"; 
+	myDev1	 	= "${myDevice}p1";
+	myDev2	 	= "${myDevice}p2";
+	myPkgs		= (import /home/ghasshee/ghasshee/nixos/myPackages.nix) pkgs;
+in
 {
     imports             =   [ ./hardware-configuration.nix ];
     hardware            =   {
         opengl.driSupport32Bit  = true;
         pulseaudio.support32Bit = true;
         bluetooth.enable        = true; };
-    boot                =   {
+    boot                =   
+	{
         kernelPackages      = pkgs.linuxPackages_latest;
         consoleLogLevel     = 5 ;
-        kernelParams        = ["resume=/dev/nvme0n1p2" ];
+        kernelParams        = ["resume=${myDev2}" ];
         blacklistedKernelModules = ["nouveau"];
         initrd              = {
             checkJournalingFS   = false;   
             luks.devices        = [{
                 name                = "root";
-                device              = "/dev/nvme0n1p2";
+                device              = "${myDev2}";
                 preLVM              = true;  }]; };
         loader              = {
             grub                = {
                 enable              = true;
-                device              = "/dev/nvme0n1";
-                extraConfig         = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=/dev/nvme0n1p2\""; 
+                device              = myDevice;
+                extraConfig         = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${myDev2}\""; 
                 };};
     };
     time.timeZone       =   "Asia/Tokyo";
@@ -88,7 +96,7 @@
 
                 sys             = [
 
-                    acpi zsh vim bvi tmux w3m git curl wget gnused xsel
+                    acpi zsh vim bvi tmux w3m git curl wget gnused xsel rename 
                     tree less jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc 
                     openssl.dev openssh gnupg sshfs stunnel         ## Security                 
                     networkmanager iptables nettools irssi tcpdump  ## Network 
@@ -129,7 +137,7 @@
                     coq coqPackages_8_6.ssreflect   ## Coq
                     rustup cargo                    ## RUST 
         
-            ]; in sys ++ hs ++ py ++ ml ;
+            ]; in sys ++ hs ++ py ++ ml ++ myPkgs;
     };
     
 
