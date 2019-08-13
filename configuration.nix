@@ -61,10 +61,10 @@ with pkgs;
     environment                 =   {
         etc."fuse.conf".text = ''user_allow_other'';
             systemPackages = [
-                zsh vim bvi tmux w3m git curl wget gnused xsel rename tree less 
-                jq mlocate unzip xa sl lolcat figlet man-db manpages sdcv bc acpi
+                zsh vim bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap
+                jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc acpi
                 openssl.dev openssh gnupg sshfs stunnel 
-                networkmanager iptables nettolls irssi tcpdump
+                networkmanager iptables nettools irssi tcpdump
 
                 at lsof psutils htop fzf psmisc 
                 config.boot.kernelPackages.perf         ## linuxPackages.perf

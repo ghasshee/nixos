@@ -17,7 +17,8 @@ let
         ];
     hs              = [ 
         (patched-ghc.ghcWithPackages (p: with p; [
-            cabal-install hoogle hakyll effect-monad hmatrix megaparsec gnuplot GLUT Euterpea
+            cabal-install hoogle hakyll effect-monad hmatrix megaparsec gnuplot GLUT 
+            Euterpea HSoM 
             base58-bytestring vector-sized mwc-random cryptonite secp256k1-haskell # secp256k1 
             # algebra
             ])) 
@@ -26,30 +27,8 @@ let
         ocaml opam utop camlp4 findlib batteries 
         ]; 
     sys             = [
-        acpi zsh vim bvi tmux w3m git curl wget gnused xsel rename 
-        tree less jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc 
-        openssl.dev openssh gnupg sshfs stunnel         ## Security                 
-        networkmanager iptables nettools irssi tcpdump  ## Network 
-                
-    # Process / Memory 
-        at                                      # scheduled process execution
-        lsof psutils htop fzf 
-        psmisc                                  # killall, pstree, ..etc
-        config.boot.kernelPackages.perf         ## linuxPackages.perf 
-        
-    # X 
-        xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl          
-        numix-icon-theme-circle numix-gtk-theme
-        freeglut  ## For GLUT GPU culculation 
-                 
-   # Music/Video
-        pulseaudioLight ## pulseaudioFull     
-        dvdplusrwtools dvdauthor
-        espeak ffmpeg-full mplayer sox timidity 
-        gnome3.totem vlc    # kde4.dragon kde4.kmix 
                  
    # Applications
-        chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
         sage            # Mathematica Alternative 
         android-file-transfer
         dropbox-cli xorg.libxshmfence atom djvu2pdf qrencode vokoscreen docker gimp youtube-dl
@@ -58,6 +37,7 @@ let
         tesseract       # OCR
         timidity        # MIDI
         minecraft       # Game
+        ltris
                 
    # Languages  
         stdenv  binutils.bintools makeWrapper cmake automake autoconf glibc gdb 
