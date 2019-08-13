@@ -45,7 +45,7 @@ let
    # Music/Video
         pulseaudioLight ## pulseaudioFull     
         dvdplusrwtools dvdauthor
-        espeak ffmpeg mplayer sox timidity 
+        espeak ffmpeg-full mplayer sox timidity 
         gnome3.totem vlc    # kde4.dragon kde4.kmix 
                  
    # Applications

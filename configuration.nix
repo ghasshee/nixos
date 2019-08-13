@@ -13,7 +13,6 @@ with pkgs;
     imports                     =   [ ./hardware-configuration.nix ];
     hardware                    =   {
         opengl.driSupport32Bit      = true;
-        #pulseaudio.support32Bit     = true;
         pulseaudio.enable           = true;
         bluetooth.enable            = true; 
         };
@@ -62,7 +61,23 @@ with pkgs;
     environment                 =   {
         etc."fuse.conf".text = ''user_allow_other'';
             systemPackages = [
-                config.boot.kernelPackages.perf         ## linuxPackages.perf 
+                zsh vim bvi tmux w3m git curl wget gnused xsel rename tree less 
+                jq mlocate unzip xa sl lolcat figlet man-db manpages sdcv bc acpi
+                openssl.dev openssh gnupg sshfs stunnel 
+                networkmanager iptables nettolls irssi tcpdump
+
+                at lsof psutils htop fzf psmisc 
+                config.boot.kernelPackages.perf         ## linuxPackages.perf
+
+                xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
+                numix-icon-theme-circle numix-gtk-theme
+
+                pulseaudioLight 
+                dvdplusrwtools dvdauthor 
+                espeak ffmpeg-full mplayer sox timidity 
+                gnome3.totem vlc
+
+                chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
             ] ++ p;
         };
     services            = {
