@@ -119,6 +119,7 @@ with pkgs;
         promptInit              = "";
         interactiveShellInit    = ""; 
         };
+    virtualisation.docker.enable = true;
 #########  User ( Do not forget to set with `passwd` ) 
     users                   = {
         users               = {};
@@ -126,7 +127,7 @@ with pkgs;
             ghasshee            = {
 	            isNormalUser        = true;
 	            home                = "/home/ghasshee";
-	            extraGroups         = ["wheel" "networkmanager" "adbusers"];
+	            extraGroups         = ["wheel" "networkmanager" "adbusers" "docker"];
       	        shell               = "/run/current-system/sw/bin/zsh";
                 uid                 = 1000;     };};
         };

@@ -38,6 +38,7 @@ let
         timidity        # MIDI
         minecraft       # Game
         ltris
+        texlive.combined.scheme-full
                 
    # Languages  
         stdenv  binutils.bintools makeWrapper cmake automake autoconf glibc gdb 
