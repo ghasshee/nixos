@@ -2,13 +2,14 @@
 # SEARCH PKGs   =>  $ nix-env -qaP | grep wget
 
 { config, pkgs, ... }:
+with pkgs; 
 let 
 	dev 	    = "/dev/nvme0n1"; 
 	dev1	 	= "${dev}p1";
     dev2	 	= "${dev}p2";
 	p		    = (import ./packages.nix) pkgs;
+    vim_        = vim_configurable.override {python = python3; };  
 in
-with pkgs; 
 {
     imports                     =   [ ./hardware-configuration.nix ];
     hardware                    =   {
@@ -58,10 +59,12 @@ with pkgs;
         allowBroken                 = true;
         firefox.icedtea             = true;
         };
-    environment                 =   {
-        etc."fuse.conf".text = ''user_allow_other'';
-            systemPackages = [
-                zsh vim bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap
+    environment                 = 
+        {
+          etc."fuse.conf".text = ''user_allow_other'';
+          systemPackages = [
+                neovim vim_  ## vim
+                zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap
                 jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc acpi
                 openssl.dev openssh gnupg sshfs stunnel 
                 networkmanager iptables nettools irssi tcpdump
@@ -71,8 +74,10 @@ with pkgs;
 
                 xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
                 numix-icon-theme-circle numix-gtk-theme
+                xfce.thunar-dropbox-plugin
 
                 pulseaudioLight 
+                alsaUtils 
                 dvdplusrwtools dvdauthor 
                 espeak ffmpeg-full mplayer sox timidity 
                 gnome3.totem vlc
@@ -81,6 +86,9 @@ with pkgs;
             ] ++ p;
         };
     services            = {
+        locate                  = {
+            enable                  = true;
+            interval                = "00 05 * * *"; };
         acpid.enable            = true;
         redshift                = {
             enable                  = true;
@@ -114,11 +122,12 @@ with pkgs;
             drivers                 = [ gutenprint hplipWithPlugin cups-bjnp cups-dymo ];};
         };
     # Shells
-    programs.zsh            = {
-        enable                  = true;
-        promptInit              = "";
-        interactiveShellInit    = ""; 
-        };
+    programs            = {
+        zsh                 = {
+            enable                  = true;
+            promptInit              = "";
+            interactiveShellInit    = ""; };
+    };
     virtualisation.docker.enable = true;
 #########  User ( Do not forget to set with `passwd` ) 
     users                   = {
@@ -127,7 +136,7 @@ with pkgs;
             ghasshee            = {
 	            isNormalUser        = true;
 	            home                = "/home/ghasshee";
-	            extraGroups         = ["wheel" "networkmanager" "adbusers" "docker"];
+	            extraGroups         = ["wheel" "networkmanager" "adbusers" "docker" "mlocate"];
       	        shell               = "/run/current-system/sw/bin/zsh";
                 uid                 = 1000;     };};
         };

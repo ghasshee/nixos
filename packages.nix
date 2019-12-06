@@ -10,8 +10,8 @@ let
         );
     py              = [
         python27Full python27Packages.pygments pypyPackages.virtualenv
-        (python36.withPackages (x: with x; [
-            python pip numpy scipy networkx matplotlib toolz pytest 
+        (python37.withPackages (x: with x; [
+            python pynvim pip numpy scipy networkx matplotlib toolz pytest 
             ipython jupyter virtualenvwrapper tkinter #tk
             ])) 
         ];
@@ -24,14 +24,25 @@ let
             ])) 
         ];
     ml              = with ocamlPackages; [
-        ocaml opam utop camlp4 findlib batteries 
+      opam 
+        # ocaml opam utop camlp4 findlib batteries 
+        # merlin yojson ppx_deriving_yojson menhir #  to build merlin
         ]; 
     sys             = [
+    # FreeFEM++
+        m4 bison flex patch unzip gfortran gmm blas liblapack hdf5 gsl fftw 
+        openmpi freeglut autoconf arpack suitesparse texlive.combined.scheme-full cmake valgrind 
+        gdb flex automake file
+        gmp 
+        gnum4 pkgconfig 
+        jbuilder 
+        cowsay 
                  
    # Applications
         sage            # Mathematica Alternative 
         android-file-transfer
-        dropbox-cli xorg.libxshmfence atom djvu2pdf qrencode vokoscreen docker gimp youtube-dl
+        rclone rsync    # rclone is a dropbox tool  
+        xorg.libxshmfence atom djvu2pdf qrencode vokoscreen docker gimp youtube-dl
         maim            # command-line screenshot
         gnome3.eog      # image viewer
         tesseract       # OCR
