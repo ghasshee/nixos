@@ -1,5 +1,9 @@
 #!/bin/sh
 
+[[ `uname` == 'Linux'  ]] && NIX=/run/current-system/sw/bin/nix
+[[ `uname` == 'Darwin' ]] && NIX=~/.nix-profile/bin/nix
+
+
 backup_config(){
 cp -r ~/.config/dconf   ~/ghasshee/nixos/.config
 cp -r ~/.config/gtk-2.0 ~/ghasshee/nixos/.config
@@ -49,13 +53,14 @@ Usage:"
     $ nix install       ## install nix-files
     $ nix help          ## show this help menu " 
     echo -e "\033[0m"
-    /run/current-system/sw/bin/nix --help
+    $NIX --help
 elif    [[ $1 == "push" ]] ; then 
     cd $NIX; git add --all; git commit -m "Update"; git push 
 elif    [[ $1 == "pull" ]] ; then 
     cd $NIX; git pull
 else
-    /run/current-system/sw/bin/nix $@
+    $NIX $@
 fi
+
 
 
