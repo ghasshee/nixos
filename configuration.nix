@@ -22,6 +22,7 @@ in
         consoleLogLevel             = 5 ;
         kernelParams                = ["resume=${dev2}" ];
         blacklistedKernelModules    = ["nouveau"];
+        extraModulePackages         = with config.boot.kernelPackages; [ wireguard ];
         initrd                      = {
             checkJournalingFS   = false;   
             luks.devices        = [{
