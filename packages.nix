@@ -28,14 +28,6 @@ let
         # ocaml opam utop camlp4 findlib batteries 
         # merlin yojson ppx_deriving_yojson menhir #  to build merlin
         ]; 
-    linux           = [
-        atom
-        minecraft       # Game
-        timidity        # MIDI
-        vokoscreen
-        ];
-    macos           = [
-        ];
     sys             = [
     # FreeFEM++
         m4 bison flex patch unzip gfortran gmm blas liblapack hdf5 gsl fftw 
@@ -61,6 +53,10 @@ let
         tesseract       # OCR
         ltris
         texlive.combined.scheme-full
+        atom
+        minecraft       # Game
+        timidity        # MIDI
+        vokoscreen
                 
    # Languages  
         stdenv  binutils.bintools makeWrapper cmake automake autoconf glibc gdb 
@@ -70,4 +66,4 @@ let
         coq coqPackages_8_6.ssreflect   ## Coq
         rustup cargo                    ## RUST 
     ];
-in { sys=sys; hs=hs; py=py; ml=ml; linux=linux; macos=macos; }  
+in sys ++ py ++ hs ++ ml 

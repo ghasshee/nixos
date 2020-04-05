@@ -7,7 +7,7 @@ let
 	dev 	    = "/dev/nvme0n1"; 
 	dev1	 	= "${dev}p1";
     dev2	 	= "${dev}p2";
-	s,p		    = (import ./packages.nix) pkgs;
+	p		    = (import ./packages.nix) pkgs;
     vim_        = vim_configurable.override {python = python3; };  
 in
 {

@@ -1,13 +1,29 @@
 { config, pkgs, ... }:
 
-let packages = (import ./packages.nix) pkgs;
-in 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
-    [ vim zsh ghc ruby pstree rename 
-    ] ++ packages.ml ++ packages.sys;
+    [ vim zsh ruby pstree rename 
+    
+    ## PYTHON 
+    (python37.withPackages (x: with x; [
+        python pynvim pip 
+        numpy scipy networkx matplotlib toolz pytest 
+        ipython jupyter virtualenvwrapper tkinter ]))
+    
+    ## OCAML 
+    opam 
+
+    ## HASKELL
+    (ghc.withPackages (p: with p; [
+    cabal-install hoogle hakyll hmatrix megaparsec 
+    ] ))
+
+
+    
+
+    ] ;
 
   nixpkgs.config = {
       allowBroken = true; 
@@ -23,8 +39,8 @@ in
   # nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.bash.enable = true;
-  # programs.zsh.enable = true;
+  # programs.bash.enable = true;
+  programs.zsh.enable = true;
   # programs.fish.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
