@@ -28,6 +28,14 @@ let
         # ocaml opam utop camlp4 findlib batteries 
         # merlin yojson ppx_deriving_yojson menhir #  to build merlin
         ]; 
+    linux           = [
+        atom
+        minecraft       # Game
+        timidity        # MIDI
+        vokoscreen
+        ];
+    macos           = [
+        ];
     sys             = [
     # FreeFEM++
         m4 bison flex patch unzip gfortran gmm blas liblapack hdf5 gsl fftw 
@@ -42,12 +50,10 @@ let
         sage            # Mathematica Alternative 
         android-file-transfer
         rclone rsync    # rclone is a dropbox tool  
-        xorg.libxshmfence atom djvu2pdf qrencode vokoscreen docker gimp youtube-dl
+        xorg.libxshmfence  djvu2pdf qrencode  docker gimp youtube-dl
         maim            # command-line screenshot
         gnome3.eog      # image viewer
         tesseract       # OCR
-        timidity        # MIDI
-        minecraft       # Game
         ltris
         texlive.combined.scheme-full
                 
@@ -58,5 +64,5 @@ let
         idris vimPlugins.idris-vim      ## Idris
         coq coqPackages_8_6.ssreflect   ## Coq
         rustup cargo                    ## RUST 
-];
-in sys ++ hs ++ py ++ ml 
+    ];
+in { sys=sys; hs=hs; py=py; ml=ml; linux=linux; macos=macos; }  
