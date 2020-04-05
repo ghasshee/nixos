@@ -38,6 +38,8 @@
         <value type="int" value="23"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
+        <value type="int" value="2"/>
+        <value type="int" value="12"/>
       </property>
       <property name="mode" type="uint" value="2"/>
       <property name="size" type="uint" value="60"/>
@@ -68,6 +70,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="thunar"/>
+        <value type="string" value="vlc"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="ibus panel"/>
         <value type="string" value="ibus-ui-gtk3"/>
@@ -131,6 +134,12 @@
     <property name="plugin-23" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15600829701.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-2" type="string" value="power-manager-plugin"/>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15840945521.desktop"/>
       </property>
     </property>
   </property>

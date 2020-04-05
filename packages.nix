@@ -48,7 +48,7 @@ let
    
    # Developping kernel modules 
         linux.dev
-        glibc 
+        glibc glibc_multi clang 
         fakeroot 
                  
    # Applications

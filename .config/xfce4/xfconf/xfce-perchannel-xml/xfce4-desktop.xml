@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="3"/>
-          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/snowy_mountain_winter_mist-wallpaper-2560x1440.jpg"/>
+          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/spring_in_winter-wallpaper-2560x1440.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-period" type="int" value="1"/>
           <property name="backdrop-cycle-timer" type="uint" value="5"/>
@@ -15,25 +15,26 @@
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/beach_drone_photography-wallpaper-2560x1440.jpg"/>
+          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/aurora_borealis_atmosphere-wallpaper-2560x1440.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/norway_mountains_2-wallpaper-2560x1440(1).jpg"/>
+          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/mountainscape-wallpaper-2560x1440.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/beach-bird-s-eye-view-coast-50594.jpg"/>
+          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/armenia_syunik_khustup_hayk_photography-wallpaper-2560x1440.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
         </property>
         <property name="workspace4" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/beach_drone_photography-wallpaper-2560x1440.jpg"/>
+          <property name="last-image" type="string" value="/home/ghasshee/.backgrounds/snowy_mountain_winter_mist-wallpaper-2560x1440.jpg"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
         </property>
         <property name="workspace5" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -74,6 +75,33 @@
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/nix/store/rs7p9yr9vz2gxhglczk53s9capdnmblp-xfdesktop-4.12.3/share/backgrounds/xfce/xfce-teal.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/ghasshee/x(x-0.7)(x-1.6)(x+0.7)(x-1.6)-y^5"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/ghasshee/x(x-0.7)(x-1.6)(x+0.7)(x-1.6)-y^5"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/ghasshee/x(x-0.7)(x-1.6)(x+0.7)(x-1.6)-y^5"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/ghasshee/x(x-0.7)(x-1.6)(x+0.7)(x-1.6)-y^5"/>
+        </property>
+        <property name="workspace4" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/ghasshee/x(x-0.7)(x-1.6)(x+0.7)(x-1.6)-y^5"/>
         </property>
       </property>
     </property>

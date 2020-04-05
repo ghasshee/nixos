@@ -65,10 +65,12 @@ in
           etc."fuse.conf".text = ''user_allow_other'';
           systemPackages = [
                 neovim vim_  ## vim
-                zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap
+                zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap rename 
                 jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc acpi
                 openssl.dev openssh gnupg sshfs stunnel 
                 networkmanager iptables nettools irssi tcpdump
+                ntfsprogs ## Windows File System
+                nkf 
 
                 at lsof psutils htop fzf psmisc 
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
