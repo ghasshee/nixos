@@ -45,6 +45,11 @@ let
         gnum4 pkgconfig 
         jbuilder 
         cowsay 
+   
+   # Developping kernel modules 
+        linux.dev
+        glibc 
+        fakeroot 
                  
    # Applications
         sage            # Mathematica Alternative 
