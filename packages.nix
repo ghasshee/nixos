@@ -17,6 +17,7 @@ let
         ];
     hs              = [ 
         (patched-ghc.ghcWithPackages (p: with p; [
+            Agda
             cabal-install hoogle hakyll effect-monad hmatrix megaparsec gnuplot GLUT 
             Euterpea HSoM 
             base58-bytestring vector-sized mwc-random cryptonite secp256k1-haskell # secp256k1 

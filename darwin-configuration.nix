@@ -17,7 +17,7 @@
 
     ## HASKELL
     (ghc.withPackages (p: with p; [
-    cabal-install hoogle hakyll hmatrix megaparsec 
+    cabal-install hoogle hakyll hmatrix megaparsec Agda 
     ] ))
 
 
