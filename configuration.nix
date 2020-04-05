@@ -86,7 +86,7 @@ in
                 gnome3.totem vlc
 
                 chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
-            ] ++ p.sys ++ p.hs ++ p.ml ++ p.py ++ p.linux;
+            ] ++ p;
         };
     services            = {
         locate                  = {
