@@ -36,14 +36,35 @@ cp -r $HOME/ghasshee/nixos/.config/ ~/.config
 }
 
 install(){
-if [[ -e /etc/nixos/configuration.nix ]] 
-then
-    sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration-old.nix
-fi
-if [[ -e /etc/nixos/packages.nix ]] 
-then
-    sudo mv /etc/nixos/packages.nix /etc/nixos/packages-old.nix
-fi
+
+SRCFILE=/etc/nixos/configuration.nix;
+TGTFILE="${SRCFILE}_"
+while true ; do  
+    if [[ -e $SRCFILE ]] 
+    then 
+        if [[ -e $TGTFILE ]]
+        then 
+            TGTFILE="${TGTFILE}_"; continue
+        else 
+            sudo mv $SRCFILE $TGTFILE ; break
+        fi 
+    fi  
+done    
+
+SRCFILE=/etc/nixos/packages.nix;
+TGTFILE="${SRCFILE}_"
+while true ; do  
+    if [[ -e $SRCFILE ]] 
+    then 
+        if [[ -e $TGTFILE ]]
+        then 
+            TGTFILE="${TGTFILE}_"; continue
+        else 
+            sudo mv $SRCFILE $TGTFILE ; break
+        fi 
+    fi  
+done    
+
 sudo cp $HOME/ghasshee/nixos/configuration.nix /etc/nixos/configuration.nix 
 sudo cp $HOME/ghasshee/nixos/packages.nix /etc/nixos/packages.nix 
 }
