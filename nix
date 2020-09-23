@@ -18,19 +18,29 @@ cp /etc/nixos/packages.nix      ~/ghasshee/nixos
 }
 
 install_config(){
-if [[ -d ~/.config ]] 
-then 
-    mv ~/.config ~/.config-old 
-fi
+
+SRCFILE=~/.config;
+TGTFILE="${SRCFILE}_"
+while true ; do  
+    if [[ -d $SRCFILE ]] 
+    then 
+        if [[ -d $TGTFILE ]]
+        then 
+            TGTFILE="${TGTFILE}_"; continue
+        else 
+            mv $SRCFILE $TGTFILE ; break
+        fi 
+    fi  
+done    
 cp -r $HOME/ghasshee/nixos/.config/ ~/.config
 }
 
 install(){
-if [[ -d /etc/nixos/configuration.nix ]] 
+if [[ -e /etc/nixos/configuration.nix ]] 
 then
     sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration-old.nix
 fi
-if [[ -d /etc/nixos/packages.nix ]] 
+if [[ -e /etc/nixos/packages.nix ]] 
 then
     sudo mv /etc/nixos/packages.nix /etc/nixos/packages-old.nix
 fi
@@ -61,6 +71,5 @@ elif    [[ $1 == "pull" ]] ; then
 else
     $NIX $@
 fi
-
 
 
