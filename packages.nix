@@ -1,13 +1,27 @@
 {config, pkgs, ... }:
 with pkgs;
 let 
-    patched-ghc     = haskellPackages.override (old:{
-        overrides = self: super: {
+    my-ghc865     = ( haskellPackages.override (old:{
+        overrides = (self: super: { 
             Euterpea    = self.callHackage "Euterpea" "2.0.6" {};
             PortMidi    = self.callHackage "PortMidi" "0.1.6.1" {};
             heap        = pkgs.haskell.lib.dontCheck super.heap;
-                            };}
-        );
+          });
+        }) );  
+    # patched-ghc     = haskellPackages.override (old:{
+    #     overrides = self: super: {
+    #         Euterpea    = self.callHackage "Euterpea" "2.0.6" {};
+    #         PortMidi    = self.callHackage "PortMidi" "0.1.6.1" {};
+    #         heap        = pkgs.haskell.lib.dontCheck super.heap;
+    #         #pandoc      = self.callHackage "pandoc" "2.0.5" {};
+    #                         };}
+    #     );
+    eth             = [
+        go-ethereum
+        parity 
+        #solc
+    ];
+
     py              = [
         python27Full python27Packages.pygments pypyPackages.virtualenv
         (python37.withPackages (x: with x; [
@@ -16,11 +30,19 @@ let
             ])) 
         ];
     hs              = [ 
-        (patched-ghc.ghcWithPackages (p: with p; [
-            Agda
-            cabal-install hoogle hakyll effect-monad hmatrix megaparsec gnuplot GLUT 
+        # (haskell.packages.ghc882.ghcWithPackages (p: with p; [
+        (haskell.packages.ghc882.ghcWithPackages (p: with p; [
+            hoogle alex happy # hakyll 
+            hmatrix GLUT   
+            base58-bytestring vector-sized mwc-random cryptonite 
+            ]))
+
+        (my-ghc865.ghc.withPackages (p: with p; [
+            Agda 
+            cabal-install hoogle hmatrix megaparsec gnuplot GLUT #hakyll effect-monad 
             Euterpea HSoM 
-            base58-bytestring vector-sized mwc-random cryptonite secp256k1-haskell # secp256k1 
+            base58-bytestring vector-sized mwc-random # cryptonite  # secp256k1-haskell # secp256k1 
+            alex happy
             # algebra
             ])) 
         ];
@@ -29,7 +51,7 @@ let
         # ocaml opam utop camlp4 findlib batteries 
         # merlin yojson ppx_deriving_yojson menhir #  to build merlin
         ]; 
-    sys             = [
+    sys             = [ 
     # FreeFEM++
         m4 bison flex patch unzip gfortran gmm blas liblapack hdf5 gsl fftw 
         openmpi freeglut autoconf arpack suitesparse texlive.combined.scheme-full cmake valgrind 
@@ -38,6 +60,7 @@ let
         gnum4 pkgconfig 
         jbuilder 
         cowsay 
+        time
    
    # Developping kernel modules 
         linux.dev
@@ -55,7 +78,6 @@ let
         ltris
         texlive.combined.scheme-full
         atom
-        minecraft       # Game
         timidity        # MIDI
         vokoscreen
                 
@@ -64,7 +86,8 @@ let
         binutils gcc gnumake openssl pkgconfig 
         nodejs ruby jekyll              ## Ruby / Nodejs
         idris vimPlugins.idris-vim      ## Idris
-        coq coqPackages_8_6.ssreflect   ## Coq
+        coq coqPackages.mathcomp coqPackages.ssreflect   ## Coq
         rustup cargo                    ## RUST 
+        clisp                           ## ANSI COMMON LISP 
     ];
-in sys ++ py ++ hs ++ ml 
+in sys ++ py ++ hs ++ ml ++ eth

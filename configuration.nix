@@ -8,7 +8,13 @@ let
 	dev1	 	= "${dev}p1";
     dev2	 	= "${dev}p2";
 	p		    = (import ./packages.nix) pkgs;
-    vim_        = vim_configurable.override {python = python3; };  
+    #vim_        = vim_configurable.customize{
+    #                  name = "vim-with-plugins";
+    #                  vimrcConfig.packages.myVimPackages = with pkgs.vimPlugins; {
+    #                      start = [ vimproc ];
+    #                  };
+    #              };`L
+    vim_          = vim_configurable.override {python = python3; };
 in
 {
     imports                     =   [ ./hardware-configuration.nix ];
@@ -22,13 +28,16 @@ in
         consoleLogLevel             = 5 ;
         kernelParams                = ["resume=${dev2}" ];
         blacklistedKernelModules    = ["nouveau"];
-        extraModulePackages         = with config.boot.kernelPackages; [ wireguard ];
+        /*extraModulePackages         = with config.boot.kernelPackages; [ wireguard ];*/
         initrd                      = {
             checkJournalingFS   = false;   
-            luks.devices        = [{
-                name                = "root";
-                device              = "${dev2}";
-                preLVM              = true;  }]; };
+            luks.devices        = {
+                root            = {
+                    device              = "${dev2}";
+                    preLVM              = true;  
+                }; 
+            }; 
+        };
         loader                  = {
             grub                    = {
                 enable                  = true;
@@ -46,9 +55,13 @@ in
             allowedTCPPorts         = [ 8080 ];
             allowedUDPPorts         = [ ]; };
         };
+    console                     =   { 
+        font                        = "Lat2-terminus16"; 
+        keyMap                      = "us"; 
+    };
     i18n                        =   {
-        consoleFont                 = "Lat2-Terminus16";
-        consoleKeyMap               = "us";
+        # consoleFont                 = "Lat2-Terminus16";
+        # consoleKeyMap               = "us";
         defaultLocale               = "en_US.UTF-8";
         inputMethod                 = {
             enabled                     = "ibus";
@@ -58,11 +71,14 @@ in
     nixpkgs.config              = {
         allowUnfree                 = true;
         allowBroken                 = true;
-        firefox.icedtea             = true;
+        ## firefox.icedtea             = true;
         };
     environment                 = 
         {
           etc."fuse.conf".text = ''user_allow_other'';
+          pathsToLink    = [
+              "/share/agda"
+          ];
           systemPackages = [
                 neovim vim_  ## vim
                 zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap rename 
@@ -86,8 +102,17 @@ in
                 gnome3.totem vlc
 
                 chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
+                jdk11 
+                # skype 
+
+                AgdaStdlib
             ] ++ p;
         };
+
+    location = {
+        longitude = 135.0;
+        latitude   = 40.0;
+    };
     services            = {
         locate                  = {
             enable                  = true;
@@ -95,18 +120,25 @@ in
         acpid.enable            = true;
         redshift                = {
             enable                  = true;
-            latitude                = "40";
-            longitude               = "135";    };
+            /*latitude                = "40";
+            longitude               = "135";    */
+          };
         openssh.enable          = true;
         xserver                 = {
             enable                  = true;
             layout                  = "us";
             xkbOptions              = "eurosign:e";
-            displayManager.slim     = {
+            displayManager.lightdm     = {
                 enable                  = true;
-                defaultUser             = "ghasshee";
-                autoLogin               = true;     };
+                autoLogin.user          = "ghasshee";
+                autoLogin.enable        = true;     };
             desktopManager.xfce.enable = true;
+            libinput                = {
+                enable                  = false;
+                naturalScrolling        = true;
+                accelSpeed              = "250";
+                accelProfile            = "flat";
+              };
             synaptics               = {
                 enable                  = true;
                 tapButtons              = false;
@@ -117,9 +149,17 @@ in
                 buttonsMap              = [1 3 2];
                 fingersMap              = [1 3 2];
                 additionalOptions       = ''
-                    Option "VertScrollDelta" "50"
+                    Option "VertScrollDelta" "-50"
                     Option "HorizScrollDelta" "-20"
-                ''; };  };
+                    ''; };
+        };
+        #picom = {
+        #    enable  = true;
+        #    fade    = true;
+        #    inactiveOpacity = "0.9";
+        #    shadow  = true;
+        #    fadeDelta = 4;
+        #};
         printing                = {
             enable                  = true; # enable CUPS Printing 
             drivers                 = [ gutenprint hplipWithPlugin cups-bjnp cups-dymo ];};

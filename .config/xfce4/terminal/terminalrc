@@ -15,8 +15,11 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
-ColorPalette=#e30e73a673a6;#aaaa00000000;#7ffff39c7fff;#aaaa55550000;#793fab11f800;#aaaa0000aaaa;#3cd4ba89d3d3;#aaaaaaaaaaaa;#a7d69e5b9e5b;#ffff55555555;#5555ffff5555;#ffffffff5555;#83d283d2fb41;#ffff5555ffff;#75ade9a4f5ac;#ffffffffffff
+ColorPalette=#eff9f40feca1;#aaaa00000000;#7ffff39c7fff;#aaaa55550000;#793fd30ef800;#aaaa0000aaaa;#3cd4ba89d3d3;#de16dbb7dbb7;#da91ceb7ceb7;#ea34a1045bfc;#5555ffff5555;#ffffffff5555;#84078a49fdb9;#e9114f14bc11;#7b3bec61f4dd;#ffffffffffff
 ColorBackground=#33d841112347
 ScrollingLines=10000
 ColorForeground=#eeeeeeeeffff
+ColorSelection=#e6f4db1adb1a
+ColorBold=#ffffffffffff
+FontName=Monospace 11
 
