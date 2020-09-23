@@ -30,6 +30,8 @@ while true ; do
         else 
             mv $SRCFILE $TGTFILE ; break
         fi 
+    else 
+        break 
     fi  
 done    
 cp -r $HOME/ghasshee/nixos/.config/ ~/.config
@@ -48,6 +50,8 @@ while true ; do
         else 
             sudo mv $SRCFILE $TGTFILE ; break
         fi 
+    else 
+        break 
     fi  
 done    
 
@@ -62,6 +66,8 @@ while true ; do
         else 
             sudo mv $SRCFILE $TGTFILE ; break
         fi 
+    else 
+        break 
     fi  
 done    
 
