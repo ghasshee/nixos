@@ -94,6 +94,8 @@ in
                 xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
                 numix-icon-theme-circle numix-gtk-theme
                 xfce.thunar-dropbox-plugin
+                xfce.xfce4-battery-plugin
+                xfce.xfce4-clipman-plugin
 
                 pulseaudioLight 
                 alsaUtils 
@@ -103,7 +105,7 @@ in
 
                 chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
                 jdk11 
-                # skype 
+                skype 
 
                 AgdaStdlib
             ] ++ p;

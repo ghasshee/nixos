@@ -38,7 +38,7 @@ let
             ]))
 
         (my-ghc865.ghc.withPackages (p: with p; [
-            Agda 
+            Agda ieee754
             cabal-install hoogle hmatrix megaparsec gnuplot GLUT #hakyll effect-monad 
             Euterpea HSoM 
             base58-bytestring vector-sized mwc-random # cryptonite  # secp256k1-haskell # secp256k1 
