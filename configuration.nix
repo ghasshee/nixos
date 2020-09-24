@@ -41,7 +41,8 @@ in
         loader                  = {
             grub                    = {
                 enable                  = true;
-                device                  = dev;
+                # device                  = dev;
+                device                  = "nodev";
                 extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev2}\""; };};
         };
     time.timeZone               =   "Asia/Tokyo";
@@ -96,6 +97,7 @@ in
                 xfce.thunar-dropbox-plugin
                 xfce.xfce4-battery-plugin
                 xfce.xfce4-clipman-plugin
+                plasma-workspace
 
                 pulseaudioLight 
                 alsaUtils 
@@ -133,8 +135,12 @@ in
             displayManager.lightdm     = {
                 enable                  = true;
                 autoLogin.user          = "ghasshee";
-                autoLogin.enable        = true;     };
-            desktopManager.xfce.enable = true;
+                autoLogin.enable        = true;     
+              };
+            desktopManager          = {
+                xfce.enable = false;
+                plasma5.enable = true; 
+              };
             libinput                = {
                 enable                  = false;
                 naturalScrolling        = true;
