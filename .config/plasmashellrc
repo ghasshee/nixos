@@ -1,0 +1,55 @@
+[ActionsWidget]
+ColumnState=AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAboAAAACAQAAAQAAAAAAAAAAAAAAAGT/////AAAAgQAAAAAAAAACAAAA+gAAAAEAAAAAAAAAwAAAAAEAAAAAAAAD6AAAAABk
+
+[ConfigDialog]
+Height 1440=522
+Width 2560=594
+
+[General]
+Number of Actions=0
+
+[KPropertiesDialog]
+Height 1440=448
+Width 2560=410
+
+[Open-with settings]
+CompletionMode=1
+History=
+
+[PlasmaViews][Panel 29]
+alignment=132
+panelVisibility=1
+
+[PlasmaViews][Panel 29][Defaults]
+thickness=84
+
+[PlasmaViews][Panel 29][Vertical1440]
+thickness=84
+
+[PlasmaViews][Panel 54][Defaults]
+thickness=162
+
+[PlasmaViews][Panel 54][Horizontal2560]
+thickness=106
+
+[PlasmaViews][Panel 54][Vertical1440]
+thickness=162
+
+[PlasmaViews][Panel 72]
+alignment=132
+panelVisibility=1
+
+[PlasmaViews][Panel 72][Defaults]
+thickness=78
+
+[PlasmaViews][Panel 72][Horizontal2560]
+thickness=78
+
+[PlasmaViews][Panel 72][Vertical1440]
+thickness=60
+
+[ScreenConnectors]
+0=eDP-1
+
+[Updates]
+performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js
