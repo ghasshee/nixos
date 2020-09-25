@@ -5,11 +5,12 @@
 
 
 backup_config(){
-cp -r ~/.config/dconf   ~/ghasshee/nixos/.config
-cp -r ~/.config/gtk-2.0 ~/ghasshee/nixos/.config
-cp -r ~/.config/ibus    ~/ghasshee/nixos/.config
-cp -r ~/.config/Thunar  ~/ghasshee/nixos/.config
-cp -r ~/.config/xfce4   ~/ghasshee/nixos/.config
+#cp -r ~/.config/dconf   ~/ghasshee/nixos/.config
+#cp -r ~/.config/gtk-2.0 ~/ghasshee/nixos/.config
+#cp -r ~/.config/ibus    ~/ghasshee/nixos/.config
+#cp -r ~/.config/Thunar  ~/ghasshee/nixos/.config
+#cp -r ~/.config/xfce4   ~/ghasshee/nixos/.config
+cp -r ~/.config   ~/ghasshee/nixos/
 }
 
 backup(){
@@ -19,57 +20,75 @@ cp /etc/nixos/packages.nix      ~/ghasshee/nixos
 
 install_config(){
 
-SRCFILE=~/.config;
-TGTFILE="${SRCFILE}_"
-while true ; do  
-    if [[ -d $SRCFILE ]] 
-    then 
-        if [[ -d $TGTFILE ]]
-        then 
-            TGTFILE="${TGTFILE}_"; continue
-        else 
-            mv $SRCFILE $TGTFILE ; break
-        fi 
-    else 
-        break 
-    fi  
-done    
+SRCFILE=~/.config
+TGTFILE="${SRCFILE}-$(date +%y%m%d_%H%M%S)"
+if [[ -d $SRCFILE ]] ; then 
+    mv $SRCFILE $TGTFILE
+fi 
+
+#SRCFILE=~/.config;
+#TGTFILE="${SRCFILE}_"
+#while true ; do  
+#    if [[ -d $SRCFILE ]] 
+#    then 
+#        if [[ -d $TGTFILE ]]
+#        then 
+#            TGTFILE="${TGTFILE}_"; continue
+#        else 
+#            mv $SRCFILE $TGTFILE ; break
+#        fi 
+#    else 
+#        break 
+#    fi  
+#done    
 cp -r $HOME/ghasshee/nixos/.config/ ~/.config
 }
 
 install(){
 
 SRCFILE=/etc/nixos/configuration.nix;
-TGTFILE="${SRCFILE}_"
-while true ; do  
-    if [[ -e $SRCFILE ]] 
-    then 
-        if [[ -e $TGTFILE ]]
-        then 
-            TGTFILE="${TGTFILE}_"; continue
-        else 
-            sudo mv $SRCFILE $TGTFILE ; break
-        fi 
-    else 
-        break 
-    fi  
-done    
+TGTFILE="${SRCFILE}-$(date +%y%m%d_%H%M%S)"
+if [[ -e $SRCFILE ]] ; then 
+    sudo mv $SRCFILE $TGTFILE
+fi 
+
+#SRCFILE=/etc/nixos/configuration.nix;
+#TGTFILE="${SRCFILE}_"
+#while true ; do  
+#    if [[ -e $SRCFILE ]] 
+#    then 
+#        if [[ -e $TGTFILE ]]
+#        then 
+#            TGTFILE="${TGTFILE}_"; continue
+#        else 
+#            sudo mv $SRCFILE $TGTFILE ; break
+#        fi 
+#    else 
+#        break 
+#    fi  
+#done    
 
 SRCFILE=/etc/nixos/packages.nix;
-TGTFILE="${SRCFILE}_"
-while true ; do  
-    if [[ -e $SRCFILE ]] 
-    then 
-        if [[ -e $TGTFILE ]]
-        then 
-            TGTFILE="${TGTFILE}_"; continue
-        else 
-            sudo mv $SRCFILE $TGTFILE ; break
-        fi 
-    else 
-        break 
-    fi  
-done    
+TGTFILE="${SRCFILE}-$(date +%y%m%d_%H%M%S)"
+if [[ -e $SRCFILE ]] ; then 
+    sudo mv $SRCFILE $TGTFILE
+fi 
+
+#SRCFILE=/etc/nixos/packages.nix;
+#TGTFILE="${SRCFILE}_"
+#while true ; do  
+#    if [[ -e $SRCFILE ]] 
+#    then 
+#        if [[ -e $TGTFILE ]]
+#        then 
+#            TGTFILE="${TGTFILE}_"; continue
+#        else 
+#            sudo mv $SRCFILE $TGTFILE ; break
+#        fi 
+#    else 
+#        break 
+#    fi  
+#done    
 
 sudo cp $HOME/ghasshee/nixos/configuration.nix /etc/nixos/configuration.nix 
 sudo cp $HOME/ghasshee/nixos/packages.nix /etc/nixos/packages.nix 
