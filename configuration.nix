@@ -15,11 +15,20 @@ let
     #                  };
     #              };`L
     vim_          = vim_configurable.override {python = python3; };
+    vaapiIntel    = pkgs.vaapiIntel.override { enableHybridCodec = true; };
 in
 {
     imports                     =   [ ./hardware-configuration.nix ];
     hardware                    =   {
-        opengl.driSupport32Bit      = true;
+        opengl                      = {
+            driSupport32Bit      = true;
+            extraPackages           = [ 
+                intel-media-driver
+                vaapiIntel
+                vaapiVdpau
+                libvdpau-va-gl
+              ];
+        };
         pulseaudio.enable           = true;
         bluetooth.enable            = true; 
         };
@@ -41,8 +50,8 @@ in
         loader                  = {
             grub                    = {
                 enable                  = true;
-                device                  = dev;
-                # device                  = "nodev";
+                #device                  = dev;
+                device                  = "nodev";
                 extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev2}\""; };};
         };
     time.timeZone               =   "Asia/Tokyo";
@@ -139,8 +148,8 @@ in
                 autoLogin.enable        = true;     
               };
             desktopManager          = {
-                xfce.enable = true;
-                plasma5.enable = false; 
+                xfce.enable = false;
+                plasma5.enable = true; 
               };
             libinput                = {
                 enable                  = false;

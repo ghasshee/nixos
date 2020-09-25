@@ -33,11 +33,15 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][53][ConfigDialog]
+DialogHeight=1416
+DialogWidth=2418
+
 [Containments][53][Configuration]
 PreloadWeight=26
 
 [Containments][53][Wallpaper][org.kde.image][General]
-Image=file:///nix/store/97vn0hkzr4mxjpl05pnyn0grzw2qgngy-breeze-qt5-5.17.5-bin/share/wallpapers/Next/contents/images/2560x1440.png
+Image=file:///nix/store/isjmi5x4y0pyar2dckhyiqvxkqx080p8-plasma-workspace-wallpapers-5.17.5/share/wallpapers/OneStandsOut/contents/images/2560x1600.jpg
 
 [Containments][54]
 activityId=
@@ -53,10 +57,11 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][54][Applets][55][Configuration]
-PreloadWeight=86
+PreloadWeight=96
 
 [Containments][54][Applets][55][Configuration][General]
 favoritesPortedToKAstats=true
+systemApplications=systemsettings.desktop,org.kde.kinfocenter.desktop
 
 [Containments][54][Applets][55][Configuration][Shortcuts]
 global=Alt+F1
@@ -86,19 +91,26 @@ plugin=org.kde.plasma.systemtray
 PreloadWeight=26
 SystrayContainmentId=59
 
-[Containments][54][Applets][61]
-immutability=1
-plugin=org.kde.plasma.showdesktop
-
-[Containments][54][Applets][61][Configuration]
-PreloadWeight=26
-
 [Containments][54][Applets][71]
 immutability=1
 plugin=org.kde.plasma.analogclock
 
 [Containments][54][Applets][71][Configuration]
 PreloadWeight=34
+
+[Containments][54][Applets][78]
+immutability=1
+plugin=org.kde.plasma.battery
+
+[Containments][54][Applets][78][Configuration]
+PreloadWeight=65
+
+[Containments][54][Applets][78][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][54][Applets][78][Configuration][General]
+showPercentage=true
 
 [Containments][54][ConfigDialog]
 DialogHeight=1440
@@ -108,7 +120,7 @@ DialogWidth=170
 PreloadWeight=26
 
 [Containments][54][General]
-AppletOrder=71;55;56;57;58;61
+AppletOrder=71;55;56;57;58;78
 
 [Containments][59]
 activityId=
@@ -189,6 +201,10 @@ plugin=org.kde.plasma.mediacontroller
 [Containments][59][Applets][78][Configuration]
 PreloadWeight=42
 
+[Containments][59][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][59][Configuration]
 PreloadWeight=26
 
@@ -205,13 +221,6 @@ location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
-[Containments][72][Applets][73]
-immutability=1
-plugin=org.kde.plasma.appmenu
-
-[Containments][72][Applets][73][Configuration]
-PreloadWeight=34
-
 [Containments][72][Applets][74]
 immutability=1
 plugin=org.kde.plasma.quicklaunch
@@ -220,7 +229,7 @@ plugin=org.kde.plasma.quicklaunch
 PreloadWeight=34
 
 [Containments][72][Applets][74][Configuration][General]
-launcherUrls=file:///run/current-system/sw/share/applications/chromium-browser.desktop,file:///run/current-system/sw/share/applications/firefox.desktop,file:///run/current-system/sw/share/applications/skypeforlinux.desktop,file:///run/current-system/sw/share/applications/thunderbird.desktop,file:///run/current-system/sw/share/applications/systemsettings.desktop,file:///run/current-system/sw/share/applications/vivaldi-stable.desktop,file:///run/current-system/sw/share/applications/nixos-manual.desktop
+launcherUrls=file:///run/current-system/sw/share/applications/org.kde.konsole.desktop,file:///run/current-system/sw/share/applications/firefox.desktop,file:///run/current-system/sw/share/applications/vivaldi-stable.desktop,file:///run/current-system/sw/share/applications/chromium-browser.desktop,file:///run/current-system/sw/share/applications/nixos-manual.desktop,file:///run/current-system/sw/share/applications/skypeforlinux.desktop,file:///run/current-system/sw/share/applications/thunderbird.desktop,file:///run/current-system/sw/share/applications/systemsettings.desktop,file:///run/current-system/sw/share/applications/org.kde.dolphin.desktop
 
 [Containments][72][Applets][75]
 immutability=1
@@ -237,7 +246,7 @@ plugin=org.kde.plasma.panelspacer
 PreloadWeight=34
 
 [Containments][72][Applets][76][Configuration][General]
-length=461
+length=459
 
 [Containments][72][Applets][77]
 immutability=1
@@ -247,7 +256,7 @@ plugin=org.kde.plasma.panelspacer
 PreloadWeight=34
 
 [Containments][72][Applets][77][Configuration][General]
-length=896
+length=811
 
 [Containments][72][ConfigDialog]
 DialogHeight=84
@@ -257,7 +266,11 @@ DialogWidth=2560
 PreloadWeight=34
 
 [Containments][72][General]
-AppletOrder=73;76;75;74;77
+AppletOrder=76;75;74;77
+
+[General]
+immutability=2
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=desktop:/html,0,desktop:/notnot(notnotP-%3EP).png,0,desktop:/Dropbox,0,desktop:/coqArt,0

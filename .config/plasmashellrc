@@ -16,6 +16,12 @@ Width 2560=410
 CompletionMode=1
 History=
 
+[PlasmaRunnerManager]
+pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaTransientsConfig]
+PreloadWeight=34
+
 [PlasmaViews][Panel 29]
 alignment=132
 panelVisibility=1
@@ -27,13 +33,13 @@ thickness=84
 thickness=84
 
 [PlasmaViews][Panel 54][Defaults]
-thickness=162
+thickness=142
 
 [PlasmaViews][Panel 54][Horizontal2560]
 thickness=106
 
 [PlasmaViews][Panel 54][Vertical1440]
-thickness=162
+thickness=142
 
 [PlasmaViews][Panel 72]
 alignment=132
