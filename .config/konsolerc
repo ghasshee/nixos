@@ -9,3 +9,6 @@ Height 1440=1440
 State=AAAA/wAAAAD9AAAAAAAABLkAAAWCAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 2560=1209
+
+[Notification Messages]
+CloseAllTabs=true

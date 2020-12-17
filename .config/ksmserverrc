@@ -1,3 +1,10 @@
+[General]
+confirmLogout=false
+excludeApps=
+loginMode=restorePreviousLogout
+offerShutdown=true
+shutdownType=0
+
 [LegacySession: saved at previous logout]
 count=0
 
@@ -5,10 +12,10 @@ count=0
 clientId1=10dad0c6d8000160097074400000011480000
 clientId2=10dad0c6d8000160097094600000011440007
 count=2
-discardCommand1[$e]=rm,$HOME/.config/session/kwin_10dad0c6d8000160097074400000011480000_1601009532_623474
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_10dad0c6d8000160097074400000011480000_1607314697_652428
 program1=/run/current-system/sw/bin/kwin_x11
 program2=firefox
-restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10dad0c6d8000160097074400000011480000_1601009532_623474,-name,kwin_x11
+restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10dad0c6d8000160097074400000011480000_1607314697_652428,-name,kwin_x11
 restartCommand2=firefox,--sm-client-id,10dad0c6d8000160097094600000011440007
 restartStyleHint1=0
 restartStyleHint2=0

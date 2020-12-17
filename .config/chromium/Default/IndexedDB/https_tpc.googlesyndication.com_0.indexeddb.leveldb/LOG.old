@@ -1,0 +1,5 @@
+2020/10/02-09:23:35.812 7649 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/IndexedDB/https_tpc.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/10/02-09:23:45.734 1b98 Level-0 table #5: started
+2020/10/02-09:23:45.738 1b98 Level-0 table #5: 381 bytes OK
+2020/10/02-09:23:45.746 1b98 Delete type=0 #3
+2020/10/02-09:23:45.747 1b98 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,14 @@
+[General]
+lastSaveAsFile=file:///home/ghasshee/Desktop/Screenshot_20201004_234030.png
+lastSaveFile=file:///home/ghasshee/Desktop/Screenshot_20201004_234030.png
+
+[GuiConfig]
+captureModeIndex=3
+cropRegion=0,0,0,0
+lastUsedSaveMode=0
+onClickChecked=true
+window-position=466,62
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Desktop/Screenshot_20200927_024719.png,file:$HOME/Desktop/Screenshot_20201004_234030.png,file:$HOME/Desktop/Screenshot_20201004_231936.png,file:$HOME/Desktop/Screenshot_20201004_231805.png
+detailViewIconSize=0

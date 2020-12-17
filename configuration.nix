@@ -37,7 +37,7 @@ in
         consoleLogLevel             = 5 ;
         kernelParams                = ["resume=${dev2}" ];
         blacklistedKernelModules    = ["nouveau"];
-        /*extraModulePackages         = with config.boot.kernelPackages; [ wireguard ];*/
+        # extraModulePackages         = with config.boot.kernelPackages; [ wireguard ]; 
         initrd                      = {
             checkJournalingFS   = false;   
             luks.devices        = {
@@ -75,7 +75,7 @@ in
         defaultLocale               = "en_US.UTF-8";
         inputMethod                 = {
             enabled                     = "ibus";
-            ibus.engines                = with ibus-engines; [ anthy m17n ]; };
+            ibus.engines                = with ibus-engines; [ anthy m17n mozc ]; };
         };
     nix.binaryCaches            = [http://cache.nixos.org];
     nixpkgs.config              = {
@@ -90,17 +90,8 @@ in
               "/share/agda"
           ];
           systemPackages = [
-                neovim vim_  ## vim
-                zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap rename 
-                jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc acpi
-                openssl.dev openssh gnupg sshfs stunnel 
-                networkmanager iptables nettools irssi tcpdump
-                ntfsprogs ## Windows File System
-                nkf 
-
-                at lsof psutils htop fzf psmisc 
+                vim_  ## vim
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
-
                 xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
                 numix-icon-theme-circle numix-gtk-theme
                 xfce.thunar-dropbox-plugin
@@ -108,34 +99,27 @@ in
                 xfce.xfce4-clipman-plugin
                 xfce.thunar-dropbox-plugin
                 plasma-workspace
+                ibus-qt
 
                 pulseaudioLight 
                 alsaUtils 
-                dvdplusrwtools dvdauthor 
-                espeak ffmpeg-full mplayer sox timidity 
-                gnome3.totem vlc
-
-                chromium firefoxWrapper thunderbird kdeApplications.okular mupdf evince vivaldi
-                jdk11 
-                skype 
-
-                AgdaStdlib
             ] ++ p;
         };
 
     location = {
-        longitude = 135.0;
-        latitude   = 40.0;
+        longitude               = 135.0;
+        latitude                = 40.0;
     };
-    services            = {
+    services                = {
         locate                  = {
             enable                  = true;
-            interval                = "00 05 * * *"; };
+            locate                  = pkgs.mlocate;
+            interval                = "hourly" ; 
+            #interval                = "00 05 * * *"; 
+          };
         acpid.enable            = true;
         redshift                = {
             enable                  = true;
-            /*latitude                = "40";
-            longitude               = "135";    */
           };
         openssh.enable          = true;
         xserver                 = {
@@ -148,8 +132,8 @@ in
                 autoLogin.enable        = true;     
               };
             desktopManager          = {
-                xfce.enable = false;
-                plasma5.enable = true; 
+                # xfce.enable             = true;
+                plasma5.enable          = true; 
               };
             libinput                = {
                 enable                  = false;

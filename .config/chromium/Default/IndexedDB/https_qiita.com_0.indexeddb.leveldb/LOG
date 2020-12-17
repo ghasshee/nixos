@@ -1,0 +1,15 @@
+2020/09/30-16:59:06.639 1a81 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/IndexedDB/https_qiita.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/09/30-16:59:06.639 1a81 Recovering log #4
+2020/09/30-16:59:06.639 1a81 Reusing old log /home/ghasshee/.config/chromium/Default/IndexedDB/https_qiita.com_0.indexeddb.leveldb/000004.log 
+2020/09/30-17:00:09.493 1b98 Level-0 table #8: started
+2020/09/30-17:00:09.501 1b98 Level-0 table #8: 616 bytes OK
+2020/09/30-17:00:09.506 1b98 Delete type=0 #4
+2020/09/30-17:00:09.507 1b98 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/09/30-17:00:09.507 1b98 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x0a\x00v\x00i\x00s\x00i\x00t\x00C\x00o\x00u\x00n\x00t' @ 73 : 1
+2020/09/30-17:00:09.507 1b98 Compacting 1@1 + 1@2 files
+2020/09/30-17:00:09.512 1b98 Generated table #9@1: 21 keys, 583 bytes
+2020/09/30-17:00:09.512 1b98 Compacted 1@1 + 1@2 files => 583 bytes
+2020/09/30-17:00:09.518 1b98 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/09/30-17:00:09.518 1b98 Delete type=2 #5
+2020/09/30-17:00:09.518 1b98 Delete type=2 #8
+2020/09/30-17:00:09.519 1b98 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x0a\x00v\x00i\x00s\x00i\x00t\x00C\x00o\x00u\x00n\x00t' @ 73 : 1 .. (end); will stop at (end)

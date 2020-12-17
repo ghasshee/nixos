@@ -40,6 +40,11 @@ Top=None
 TopLeft=None
 TopRight=None
 
+[NightColor]
+LatitudeAuto=36.6
+LongitudeAuto=136.6167
+NightTemperature=4000
+
 [Plugins]
 desktopchangeosdEnabled=true
 

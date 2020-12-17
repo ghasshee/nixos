@@ -1,0 +1,5 @@
+2020/09/30-16:58:32.958 1b0c Reusing MANIFEST /home/ghasshee/.config/chromium/Default/IndexedDB/https_qiita.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/09/30-16:59:02.873 1b98 Level-0 table #5: started
+2020/09/30-16:59:02.879 1b98 Level-0 table #5: 1180 bytes OK
+2020/09/30-16:59:02.884 1b98 Delete type=0 #3
+2020/09/30-16:59:02.885 1b98 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
