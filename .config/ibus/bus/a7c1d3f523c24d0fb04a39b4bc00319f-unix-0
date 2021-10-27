@@ -1,3 +1,7 @@
-# This file is created by ibus-daemon, please do not modify it
-IBUS_ADDRESS=unix:abstract=/tmp/ibus/dbus-shn83m0r,guid=302f731f60ecdd36d8fdc6885fcdad3f
-IBUS_DAEMON_PID=1167
+# This file is created by ibus-daemon, please do not modify it.
+# This file allows processes on the machine to find the
+# ibus session bus with the below address.
+# If the IBUS_ADDRESS environment variable is set, it will
+# be used rather than this file.
+IBUS_ADDRESS=unix:abstract=/home/ghasshee/.cache/ibus/dbus-uKiMFGf3,guid=43cc26b1b545a29999fa0e0a61751c83
+IBUS_DAEMON_PID=1271

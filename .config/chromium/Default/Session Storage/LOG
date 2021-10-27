@@ -1,3 +1,5 @@
-2020/12/15-05:58:24.100 2119 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Session Storage/MANIFEST-000001
-2020/12/15-05:58:24.100 2119 Recovering log #3
-2020/12/15-05:58:24.101 2119 Reusing old log /home/ghasshee/.config/chromium/Default/Session Storage/000003.log 
+2021/10/11-20:56:19.897 3 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Session Storage/MANIFEST-000001
+2021/10/11-20:56:19.898 3 Recovering log #4
+2021/10/11-20:56:19.899 3 Reusing old log /home/ghasshee/.config/chromium/Default/Session Storage/000004.log 
+2021/10/22-01:34:55.117 144 Level-0 table #8: started
+2021/10/22-01:34:55.124 144 Level-0 table #8: 17180 bytes OK

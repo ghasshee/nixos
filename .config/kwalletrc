@@ -2,6 +2,7 @@
 Close When Idle=true
 Close on Screensaver=false
 Enabled=true
+First Use=false
 Idle Timeout=30
 Launch Manager=false
 Leave Manager Open=false

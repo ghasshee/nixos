@@ -1,69 +1,89 @@
 updateInfoAdded=true
 
 [disable_kmix.upd]
-ctime=1600971989
+ctime=1622044856
 done=PlasmaVolume_DisableKMixAutostart
 mtime=1
 
 [filepicker.upd]
-ctime=1600710995
+ctime=1622044842
 done=filepicker-remove-old-previews-entry
 mtime=1
 
 [fonts_akregator.upd]
-ctime=1600972002
+ctime=1622044886
 done=Plasma_Fonts_Akregator
 mtime=1
 
 [fonts_global.upd]
-ctime=1600972002
+ctime=1622044886
 done=Fonts_Global
 mtime=1
 
 [fonts_global_toolbar.upd]
-ctime=1600972002
+ctime=1622044886
 done=Fonts_Global_Toolbar
 mtime=1
 
 [fonts_kate.upd]
-ctime=1600972002
+ctime=1622044886
 done=Plasma_Fonts_Kate
 mtime=1
 
 [gtkbreeze5.5.upd]
-ctime=1600972002
+ctime=1609260370
+mtime=1
+
+[gtkconfig.upd]
+ctime=1622044846
+mtime=1
+
+[icons_remove_effects.upd]
+ctime=1622044931
+done=IconsRemoveEffects
 mtime=1
 
 [kde4breeze.upd]
-ctime=1600971996
+ctime=1622044858
 mtime=1
 
 [krdb_libpathwipe.upd]
-ctime=1600972015
+ctime=1622044931
 mtime=1
 
 [krunnerglobalshortcuts.upd]
-ctime=1600972011
+ctime=1622044911
 mtime=1
 
 [krunnerplugins.upd]
-ctime=1600972011
+ctime=1622044911
 mtime=1
 
 [kscreenlocker.upd]
-ctime=1600971996
+ctime=1622044861
 done=0.1-autolock
 mtime=1
 
+[ksmserver_update_loginMode_value.upd]
+ctime=1622044931
+done=ksmserver_update_loginMode_value_default_enum
+mtime=1
+
 [kwin.upd]
-ctime=1600972003
-done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize
+ctime=1622044896
+done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize,animation-speed
 mtime=1
 
 [okular.upd]
-ctime=1600711030
+ctime=1622044894
+done=annotation-toolbar,builtin-annotations
+mtime=1
+
+[spectacle_newConfig.upd]
+ctime=1622044888
+done=spectacle-new-config
 mtime=1
 
 [spectacle_shortcuts.upd]
-ctime=1601142325
+ctime=1622044888
 mtime=1

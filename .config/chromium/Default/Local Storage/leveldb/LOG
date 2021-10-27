@@ -1,3 +1,6 @@
-2020/12/15-05:58:24.014 20ee Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2020/12/15-05:58:24.014 20ee Recovering log #4
-2020/12/15-05:58:24.015 20ee Reusing old log /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/000004.log 
+2021/10/11-20:56:19.663 3 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2021/10/11-20:56:19.664 3 Recovering log #12
+2021/10/11-20:56:19.665 3 Reusing old log /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/000012.log 
+2021/10/20-18:44:55.557 109 Level-0 table #16: started
+2021/10/20-18:44:55.567 109 Level-0 table #16: 80596 bytes OK
+2021/10/20-18:44:55.576 109 Delete type=0 #12

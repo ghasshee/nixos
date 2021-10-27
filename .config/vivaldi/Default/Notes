@@ -3,17 +3,20 @@
    "children": [ {
       "children": [  ],
       "date_added": "13246270456254178",
+      "guid": "00000000-0000-4000-a000-000000000003",
       "id": "2",
       "subject": "Other Notes",
       "type": "other"
    }, {
       "children": [  ],
       "date_added": "13246270456254178",
+      "guid": "00000000-0000-4000-a000-000000000004",
       "id": "3",
       "subject": "Trash",
       "type": "trash"
    } ],
    "date_added": "13246270456254178",
+   "guid": "00000000-0000-4000-a000-000000000002",
    "id": "1",
    "subject": "Notes",
    "type": "folder",

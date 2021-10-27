@@ -1,2 +1,3 @@
 [BatteryManagement]
 BatteryCriticalLevel=0
+BatteryLowLevel=1

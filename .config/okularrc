@@ -3,7 +3,7 @@ FullScreen=false
 
 [MainWindow]
 Height 1440=513
-State=AAAA/wAAAAD9AAAAAAAACXIAAAVEAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAACZsAAAVMAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 2560=1566
 Window-Maximized 1440x2560=true
@@ -13,11 +13,13 @@ File1[$e]=$HOME/Desktop/Screenshot_20200927_024719.png
 File2[$e]=$HOME/Desktop/Screenshot_20201004_231936.png
 File3[$e]=$HOME/Desktop/Screenshot_20201004_231805.png
 File4[$e]=$HOME/Desktop/Screenshot_20201004_234030.png
-File5[$e]=$HOME/vitalik/2020-11-08-concave.pdf
-File6[$e]=$HOME/vitalik/2017-02-01-zk_snarks.pdf
+File5[$e]=$HOME/Desktop/Jujutsu Kaisen v01 (2019) (digital) (aKraa).cbz
+File6[$e]=$HOME/Programs/sml/ray/out.ppm
+File7[$e]=$HOME/Desktop/evm.png
 Name1[$e]=Screenshot_20200927_024719.png
 Name2[$e]=Screenshot_20201004_231936.png
 Name3[$e]=Screenshot_20201004_231805.png
 Name4[$e]=Screenshot_20201004_234030.png
-Name5[$e]=2020-11-08-concave.pdf
-Name6[$e]=2017-02-01-zk_snarks.pdf
+Name5[$e]=Jujutsu Kaisen v01 (2019) (digital) (aKraa).cbz
+Name6[$e]=out.ppm
+Name7[$e]=evm.png

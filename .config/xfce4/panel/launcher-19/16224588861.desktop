@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Skype
+Comment=Skype Internet Telephony
+Exec=/nix/store/g12b03072hwqwi670bbcw2vn66pvq4nc-skypeforlinux-8.66.0.74/bin/skypeforlinux %U
+Icon=skypeforlinux
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Skype
+Encoding=UTF-8
+Categories=Network;Application;
+MimeType=x-scheme-handler/skype;x-scheme-handler/tel;x-scheme-handler/callto;
+X-KDE-Protocols=skype,tel,callto
+Actions=QuitSkype;
+X-XFCE-Source=file:///run/current-system/sw/share/applications/skypeforlinux.desktop
+
+[Desktop Action QuitSkype]
+Name=Quit Skype
+Name[en]=Quit Skype
+Exec=/nix/store/g12b03072hwqwi670bbcw2vn66pvq4nc-skypeforlinux-8.66.0.74/bin/skypeforlinux --shutdown
+OnlyShowIn=Unity;

@@ -1,3 +1,3 @@
-2020/12/07-01:57:27.448 611f Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2020/12/07-01:57:27.448 611f Recovering log #4
-2020/12/07-01:57:27.448 611f Reusing old log /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/000004.log 
+2021/08/23-20:57:22.891 3 Reusing MANIFEST /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2021/08/23-20:57:22.892 3 Recovering log #12
+2021/08/23-20:57:22.892 3 Reusing old log /home/ghasshee/.config/chromium/Default/Local Storage/leveldb/000012.log 

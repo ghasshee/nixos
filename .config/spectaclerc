@@ -1,14 +1,19 @@
-[General]
-lastSaveAsFile=file:///home/ghasshee/Desktop/Screenshot_20201004_234030.png
-lastSaveFile=file:///home/ghasshee/Desktop/Screenshot_20201004_234030.png
+[$Version]
+update_info=spectacle_newConfig.upd:spectacle-new-config
 
 [GuiConfig]
-captureModeIndex=3
+captureMode=3
 cropRegion=0,0,0,0
-lastUsedSaveMode=0
+includeDecorations=false
 onClickChecked=true
-window-position=466,62
+quitAfterSaveCopyExport=true
+window-position=464,6
 
 [KFileDialog Settings]
-Recent Files[$e]=file:$HOME/Desktop/Screenshot_20200927_024719.png,file:$HOME/Desktop/Screenshot_20201004_234030.png,file:$HOME/Desktop/Screenshot_20201004_231936.png,file:$HOME/Desktop/Screenshot_20201004_231805.png
+Recent Files[$e]=file:$HOME/Desktop/Screenshot_20200927_024719.png,file:$HOME/Desktop/Screenshot_20211021_211447.png,file:$HOME/Desktop/Screenshot_20211021_211329.png,file:$HOME/Desktop/Screenshot_20201004_234030.png,file:$HOME/Desktop/Screenshot_20201004_231936.png,file:$HOME/Desktop/Screenshot_20201004_231805.png
 detailViewIconSize=0
+
+[Save]
+lastSaveAsLocation=file:///home/ghasshee/Desktop/Screenshot_20211021_211447.png
+lastSaveLocation=file:///home/ghasshee/Desktop/Screenshot_20211021_211447.png
+lastUsedSaveMode=0

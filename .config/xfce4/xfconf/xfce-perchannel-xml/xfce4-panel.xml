@@ -20,8 +20,7 @@
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="22"/>
-        <value type="int" value="24"/>
-        <value type="int" value="25"/>
+        <value type="int" value="2"/>
       </property>
       <property name="mode" type="uint" value="2"/>
     </property>
@@ -37,8 +36,10 @@
         <value type="int" value="16"/>
         <value type="int" value="18"/>
         <value type="int" value="11"/>
+        <value type="int" value="23"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
+        <value type="int" value="19"/>
         <value type="int" value="12"/>
       </property>
       <property name="mode" type="uint" value="2"/>
@@ -81,6 +82,8 @@
         <value type="string" value="skypeforlinux"/>
       </property>
       <property name="names-ordered" type="array">
+        <value type="string" value="flameshot"/>
+        <value type="string" value="vokoscreen"/>
         <value type="string" value="skypeforlinux"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="ibus-ui-gtk3"/>
@@ -139,10 +142,22 @@
         <value type="string" value="15840945521.desktop"/>
       </property>
     </property>
-    <property name="plugin-22" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-    </property>
     <property name="plugin-24" type="string" value="battery"/>
     <property name="plugin-25" type="string" value="xfce4-clipman-plugin"/>
+    <property name="plugin-22" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="firefox.instance1287;firefox.instance3558"/>
+    </property>
+    <property name="plugin-2" type="string" value="battery"/>
+    <property name="plugin-19" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16224588861.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16227891661.desktop"/>
+      </property>
+    </property>
   </property>
 </channel>

@@ -2,8 +2,9 @@
 DisplayNames=
 LayoutList=us
 LayoutLoopCount=-1
-Model=
-ResetOldOptions=false
+Model=pc101
+Options=eurosign:e,caps:none
+ResetOldOptions=true
 ShowFlag=false
 ShowLabel=true
 ShowLayoutIndicator=true

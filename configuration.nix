@@ -13,25 +13,27 @@ let
     #                  vimrcConfig.packages.myVimPackages = with pkgs.vimPlugins; {
     #                      start = [ vimproc ];
     #                  };
-    #              };`L
+    #              };
     vim_          = vim_configurable.override {python = python3; };
     vaapiIntel    = pkgs.vaapiIntel.override { enableHybridCodec = true; };
 in
 {
     imports                     =   [ ./hardware-configuration.nix ];
+
     hardware                    =   {
         opengl                      = {
-            driSupport32Bit      = true;
-            extraPackages           = [ 
+            driSupport32Bit             = true;
+            extraPackages               = [ 
                 intel-media-driver
                 vaapiIntel
                 vaapiVdpau
                 libvdpau-va-gl
-              ];
+            ];
         };
         pulseaudio.enable           = true;
         bluetooth.enable            = true; 
-        };
+    };
+
     boot                        =   {
         kernelPackages              = linuxPackages_latest;
         consoleLogLevel             = 5 ;
@@ -52,9 +54,13 @@ in
                 enable                  = true;
                 #device                  = dev;
                 device                  = "nodev";
-                extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev2}\""; };};
+                extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev2}\""; 
+            };
         };
+    };
+
     time.timeZone               =   "Asia/Tokyo";
+    
     networking                  =   {
         hostName                    = "ghasshee";
         networkmanager.enable       = true;
@@ -63,35 +69,45 @@ in
             enable                  = false;
             allowPing               = false;
             allowedTCPPorts         = [ 8080 ];
-            allowedUDPPorts         = [ ]; };
+            allowedUDPPorts         = [ ]; 
         };
+    };
+    
     console                     =   { 
         font                        = "Lat2-terminus16"; 
         keyMap                      = "us"; 
     };
+    
     i18n                        =   {
         # consoleFont                 = "Lat2-Terminus16";
         # consoleKeyMap               = "us";
         defaultLocale               = "en_US.UTF-8";
         inputMethod                 = {
             enabled                     = "ibus";
-            ibus.engines                = with ibus-engines; [ anthy m17n mozc ]; };
+            ibus.engines                = with ibus-engines; [ anthy m17n mozc ]; 
         };
-    nix.binaryCaches            = [http://cache.nixos.org];
-    nixpkgs.config              = {
+    };
+
+    nix                         =   {
+        binaryCaches                = [http://cache.nixos.org];
+        useSandbox                  = true;
+    };
+    
+    nixpkgs.config              =   {
         allowUnfree                 = true;
         allowBroken                 = true;
         ## firefox.icedtea             = true;
-        };
-    environment                 = 
-        {
-          etc."fuse.conf".text = ''user_allow_other'';
-          pathsToLink    = [
+    };
+    
+    environment                 =   {
+          etc."fuse.conf".text      = ''user_allow_other'';
+          pathsToLink               = [
               "/share/agda"
           ];
-          systemPackages = [
+          systemPackages            = [
                 vim_  ## vim
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
+                flamegraph                              ## google perf & flamegraph 
                 xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
                 numix-icon-theme-circle numix-gtk-theme
                 xfce.thunar-dropbox-plugin
@@ -110,37 +126,39 @@ in
         longitude               = 135.0;
         latitude                = 40.0;
     };
+
     services                = {
         locate                  = {
             enable                  = true;
             locate                  = pkgs.mlocate;
-            interval                = "hourly" ; 
+            localuser               = null; # needed so mlocate can run as root
+            #interval                = "hourly" ; 
             #interval                = "00 05 * * *"; 
-          };
+        };
         acpid.enable            = true;
         redshift                = {
             enable                  = true;
-          };
+        };
         openssh.enable          = true;
         xserver                 = {
             enable                  = true;
             layout                  = "us";
             xkbOptions              = "eurosign:e";
-            displayManager.lightdm     = {
-                enable                  = true;
+            displayManager     = {
+                #lightdm.enable          = true; 
                 autoLogin.user          = "ghasshee";
                 autoLogin.enable        = true;     
-              };
+            };
             desktopManager          = {
-                # xfce.enable             = true;
+                #xfce.enable             = true;
                 plasma5.enable          = true; 
-              };
+            };
             libinput                = {
                 enable                  = false;
                 naturalScrolling        = true;
                 accelSpeed              = "250";
                 accelProfile            = "flat";
-              };
+            };
             synaptics               = {
                 enable                  = true;
                 tapButtons              = false;
@@ -153,31 +171,33 @@ in
                 additionalOptions       = ''
                     Option "VertScrollDelta" "-50"
                     Option "HorizScrollDelta" "-20"
-                    ''; };
+                    ''; 
+            };
         };
-        #picom = {
-        #    enable  = true;
-        #    fade    = true;
-        #    inactiveOpacity = "0.9";
-        #    shadow  = true;
-        #    fadeDelta = 4;
+
+        #printing                = {
+        #    enable                  = true; # enable CUPS Printing 
+        #    drivers                 = [ gutenprint hplipWithPlugin cups-bjnp cups-dymo ];
         #};
-        printing                = {
-            enable                  = true; # enable CUPS Printing 
-            drivers                 = [ gutenprint hplipWithPlugin cups-bjnp cups-dymo ];};
-        };
+
+    };
+
+
     # Shells
     programs            = {
         zsh                 = {
             enable                  = true;
             promptInit              = "";
-            interactiveShellInit    = ""; };
+            interactiveShellInit    = ""; 
+        };
     };
+    
     virtualisation.docker.enable = true;
+
+
 #########  User ( Do not forget to set with `passwd` ) 
     users                   = {
-        users               = {};
-        extraUsers          = {
+        users               = {
             ghasshee            = {
 	            isNormalUser        = true;
 	            home                = "/home/ghasshee";
@@ -185,6 +205,8 @@ in
       	        shell               = "/run/current-system/sw/bin/zsh";
                 uid                 = 1000;     };};
         };
-    system.stateVersion = "19.03";
+        #extraUsers          = {};
+#    system.stateVersion = "20.03";
+  
 }
 

@@ -19,6 +19,27 @@ History=
 [PlasmaRunnerManager]
 pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
 
+[PlasmaTransientsConfig]
+PreloadWeight=0
+
+[PlasmaViews][Panel 106]
+panelVisibility=1
+
+[PlasmaViews][Panel 106][Defaults]
+thickness=92
+
+[PlasmaViews][Panel 106][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 106][Vertical1440]
+thickness=92
+
+[PlasmaViews][Panel 135][Defaults]
+thickness=27
+
+[PlasmaViews][Panel 135][Horizontal2560]
+thickness=27
+
 [PlasmaViews][Panel 29]
 alignment=132
 panelVisibility=1
@@ -43,16 +64,37 @@ alignment=132
 panelVisibility=1
 
 [PlasmaViews][Panel 72][Defaults]
-thickness=78
+thickness=74
 
 [PlasmaViews][Panel 72][Horizontal2560]
-thickness=78
+thickness=66
 
 [PlasmaViews][Panel 72][Vertical1440]
-thickness=60
+thickness=74
+
+[PlasmaViews][Panel 80]
+alignment=1
+
+[PlasmaViews][Panel 80][Defaults]
+thickness=84
+
+[PlasmaViews][Panel 80][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 80][Vertical1440]
+thickness=84
+
+[PlasmaViews][Panel 98][Defaults]
+thickness=72
+
+[PlasmaViews][Panel 98][Horizontal2560]
+thickness=27
+
+[PlasmaViews][Panel 98][Vertical1440]
+thickness=72
 
 [ScreenConnectors]
 0=eDP-1
 
 [Updates]
-performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js
+performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js
