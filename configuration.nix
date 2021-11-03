@@ -155,9 +155,11 @@ in
             };
             libinput                = {
                 enable                  = false;
-                naturalScrolling        = true;
-                accelSpeed              = "250";
-                accelProfile            = "flat";
+                touchpad            = {
+                    naturalScrolling        = true;
+                    accelSpeed              = "250";
+                    accelProfile            = "flat";
+                };
             };
             synaptics               = {
                 enable                  = true;

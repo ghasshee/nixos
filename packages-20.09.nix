@@ -32,8 +32,8 @@ let
         python27Packages.scipy 
         python27Packages.matplotlib 
         
-        (python39.withPackages (x: with x; [
-            virtualenv 
+        # pypyPackages.virtualenv # 20.09 
+        (python37.withPackages (x: with x; [
             python pynvim pip numpy scipy networkx matplotlib toolz pytest 
             ipython jupyter virtualenvwrapper tkinter #tk
             cloudpickle
