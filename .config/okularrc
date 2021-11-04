@@ -1,0 +1,13 @@
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGyAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1 XPosition 2560x1440=1171
+eDP-1 YPosition 2560x1440=32
+
+[Recent Files]
+File1[$e]=$HOME/mnt/home/ghasshee/Desktop/DAI-whitepaper
+Name1[$e]=DAI-whitepaper

@@ -42,13 +42,7 @@ let
             ])) 
         ];
     hs              = [ 
-        #(haskell.packages.ghc8102Binary.ghcWithPackages (p: with p; [    # unstable 
-        #(haskell.packages.ghc8104.ghcWithPackages (p: with p;[
-        #    cabal-install 
-        #    alex happy 
-        #    # hakyll 
-        #  ]))
-        #(haskell.packages.ghc882.ghcWithPackages (p: with p; [           # 20.09
+
         (haskell.packages.ghc8104.ghcWithPackages (p: with p;[
             cabal-install 
             hoogle 
@@ -117,7 +111,7 @@ let
         ntfsprogs ## Windows File System
         nkf 
         at lsof psutils htop fzf psmisc 
-        jid   ## json tool 
+        jid     ## json tool 
         ncurses ## terminal independent updating screen character tool
         gnome2.libgnomecanvas # used for "why" verification tool
 
@@ -142,7 +136,8 @@ let
         time
         espeak
 
-    # FreeFEM++
+    # FEM
+        freefem
         gmsh     # used in sound FEM python book 
    
    # Developping kernel modules 
@@ -196,7 +191,8 @@ let
         irssi 
         skype 
         gnuplot
-        #sage            # Mathematica Alternative 
+        sagemath      #sage            # Mathematica Alternative 
+        jmol tachyon #3D object viewer 
         android-file-transfer
         rclone rsync    # rclone is a dropbox tool  
         xorg.libxshmfence  djvu2pdf qrencode  docker gimp youtube-dl

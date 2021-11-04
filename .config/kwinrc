@@ -1,0 +1,30 @@
+[$Version]
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage
+
+[Compositing]
+OpenGLIsUnsafe=false
+
+[Desktops]
+Id_1=c451a5a8-d881-4b60-a775-be4bbf630b68
+Id_2=0bffcb89-eab6-4410-aa77-7c7f17c66514
+Id_3=0c254049-21f7-4dff-b2b0-cacb6624cbd7
+Id_4=859439fb-7e07-4d41-8032-0bfca0b24726
+Id_5=013b12ef-f3cf-4a25-a467-2251c23046de
+Name_2=PEN COMPILER
+Name_3=Coq Art
+Name_4=Desktop 2
+Name_5=Desktop 3
+Number=5
+Rows=1
+
+[Plugins]
+highlightwindowEnabled=true
+touchpointsEnabled=true
+
+[TabBox]
+HighlightWindows=false
+ShowTabBox=false
+
+[org.kde.kdecoration2]
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__One-Dark-Blue

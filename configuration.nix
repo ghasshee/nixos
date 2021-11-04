@@ -6,7 +6,8 @@ with pkgs;
 let 
 	dev 	    = "/dev/nvme0n1"; 
 	dev1	 	= "${dev}p1";
-    dev2	 	= "${dev}p2";
+    	dev2	 	= "${dev}p2";
+    	dev3	 	= "${dev}p3";
 	p		    = (import ./packages.nix) pkgs;
     #vim_        = vim_configurable.customize{
     #                  name = "vim-with-plugins";
@@ -35,27 +36,29 @@ in
     };
 
     boot                        =   {
-        kernelPackages              = linuxPackages_latest;
+        #kernelPackages              = linuxPackages_latest;
         consoleLogLevel             = 5 ;
-        kernelParams                = ["resume=${dev2}" ];
+        kernelParams                = ["resume=${dev3}" ];
         blacklistedKernelModules    = ["nouveau"];
         # extraModulePackages         = with config.boot.kernelPackages; [ wireguard ]; 
         initrd                      = {
             checkJournalingFS   = false;   
             luks.devices        = {
                 root            = {
-                    device              = "${dev2}";
+                    device              = dev3;
                     preLVM              = true;  
                 }; 
             }; 
         };
         loader                  = {
-            grub                    = {
-                enable                  = true;
-                #device                  = dev;
-                device                  = "nodev";
-                extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev2}\""; 
-            };
+            #grub                    = {
+            #    enable                  = true;
+            #    device                  = dev;
+            #    #device                  = "nodev";
+            #    extraConfig             = "GRUB_CMDLINE_LINUX_DEFAULT=\"resume=${dev3}\""; 
+            #};
+	    efi.canTouchEfiVariables = true;
+	    systemd-boot.enable      = true;
         };
     };
 
@@ -74,7 +77,7 @@ in
     };
     
     console                     =   { 
-        font                        = "Lat2-terminus16"; 
+        font                        = "Lat2-Terminus16"; 
         keyMap                      = "us"; 
     };
     
@@ -106,6 +109,7 @@ in
           ];
           systemPackages            = [
                 vim_  ## vim
+                gptfdisk ## gdisk 
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
                 flamegraph                              ## google perf & flamegraph 
                 xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
