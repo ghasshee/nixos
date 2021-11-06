@@ -137,7 +137,6 @@ let
         espeak
 
     # FEM
-        freefem
         gmsh     # used in sound FEM python book 
    
    # Developping kernel modules 

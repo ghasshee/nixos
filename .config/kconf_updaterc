@@ -39,6 +39,10 @@ ctime=1635913942
 done=Plasma_Fonts_Kate
 mtime=1
 
+[gtkbreeze5.5.upd]
+ctime=1609260370
+mtime=1
+
 [gtkconfig.upd]
 ctime=1635913904
 done=dont_use_gtk_css_for_window_decorations
@@ -73,6 +77,10 @@ mtime=1
 
 [krunnerhistory.upd]
 ctime=1636017224
+mtime=1
+
+[krunnerplugins.upd]
+ctime=1622044911
 mtime=1
 
 [kscreenlocker.upd]
@@ -112,7 +120,6 @@ mtime=1
 
 [spectacle_shortcuts.upd]
 ctime=1635913943
-done=spectacle-migrate-shortcuts
 mtime=1
 
 [style_widgetstyle_default_breeze.upd]

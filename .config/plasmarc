@@ -1,8 +1,2 @@
-[OSD]
-Enabled=false
-
-[PlasmaToolTips]
-Delay=-1
-
 [Theme]
-name=Monterey
+name=Monterey-dark

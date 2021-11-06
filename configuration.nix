@@ -120,6 +120,7 @@ in
                 xfce.thunar-dropbox-plugin
                 plasma-workspace
                 ibus-qt
+                fuse_exfat
 
                 pulseaudioLight 
                 alsaUtils 

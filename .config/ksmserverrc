@@ -1,2 +1,23 @@
 [$Version]
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[General]
+confirmLogout=false
+excludeApps=
+loginMode=restorePreviousLogout
+offerShutdown=true
+shutdownType=0
+
+[LegacySession: saved at previous logout]
+clientMachine1=localhost
+command1=firefox
+count=1
+
+[Session: saved at previous logout]
+clientId1=10dad0c6d8000163603863700000011170006
+count=1
+discardCommand1[$e]=rm,$HOME/.config/session/dolphin_10dad0c6d8000163603863700000011170006_1636044119_469525
+program1=/run/current-system/sw/bin/dolphin
+restartCommand1=/run/current-system/sw/bin/dolphin,-session,10dad0c6d8000163603863700000011170006_1636044119_469525,-name,dolphin
+restartStyleHint1=0
+userId1=ghasshee

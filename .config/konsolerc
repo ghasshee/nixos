@@ -1,33 +1,30 @@
-[Desktop Entry]
-ActiveSession=0
-DefaultProfile=
-DefaultSession=shell.desktop
-DynamicTabHide=0
-Fullscreen=false
-Height 768=520
-TabViewMode=0
-Width 1024=744
-bellmode=0
-class=konsole-mainwindow#1
-defaultfont=Bitstream Vera Sans Mono,12,-1,5,75,0,0,0,0,0
-font=8
-history=1000
-historyenabled=true
-keytab=default
-schema=Linux.schema
-scrollbar=2
-tabbar=1
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAACVMAAAVyAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIBAAABz/////8AAAAAAAAAAA==
+StatusBar=Disabled
+eDP-1 Height 2560x1440=1440
+eDP-1 Width 2560x1440=2387
+eDP-1 XPosition 2560x1440=142
+eDP-1 YPosition 2560x1440=0
 
-[KonsoleWindow]
-SaveGeometryOnExit=false
-ShowMenuBarByDefault=false
+[Desktop Entry]
+DefaultProfile=Profile 2.profile
+
+[Favorite Profiles]
+Favorites=
 
 [MainWindow]
-MenuBar=Disabled
+Height 1440=1440
 RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAAAACgAAAAV0AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAAAACX4AAAWCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
 StatusBar=Disabled
 ToolBarsMovable=Disabled
+Width 2560=2387
+Window-Maximized 1440x2560=true
+eDP-1 Height 2560x1440=1440
+eDP-1 Width 2560x1440=1215
+eDP-1 Window-Maximized 2560x1440=true
+eDP-1 XPosition 2560x1440=130
+eDP-1 YPosition 2560x1440=0
 
 [Notification Messages]
 CloseAllTabs=true

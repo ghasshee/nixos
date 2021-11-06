@@ -1,2 +1,16 @@
 [$Version]
 update_info=kxkb_variants.upd:split-variants
+
+[Layout]
+DisplayNames=
+LayoutList=us
+LayoutLoopCount=-1
+Model=pc101
+Options=eurosign:e,caps:none
+ResetOldOptions=true
+ShowFlag=false
+ShowLabel=true
+ShowLayoutIndicator=true
+ShowSingle=false
+SwitchMode=Global
+Use=true

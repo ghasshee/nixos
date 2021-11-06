@@ -1,6 +1,7 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
-switch-to-activity-586894d1-6c50-44a2-be23-35811e227361=none,none,Switch to activity "Default"
+switch-to-activity-67e1c8fa-822a-4127-95ac-ed37dfbd7c3a=none,none,Switch to activity "Default"
+switch-to-activity-b3d76b5e-31af-402d-b4d6-c4ab53c1bdc4=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
@@ -24,7 +25,7 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{05cae23f-cd0c-4de8-8183-723103406c82}=Ctrl+Alt+T,none,Launch Konsole
+{9e48e5b0-78e5-41f8-b6f2-0035e222ff42}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
@@ -43,7 +44,7 @@ _launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Halt Without Confirmation
-Lock Session=Screensaver\tMeta+L,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
+Lock Session=Meta+L\t\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
 Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Log Out Without Confirmation
 Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Reboot Without Confirmation
@@ -65,11 +66,11 @@ MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Setup Window Shortcut=none,none,Setup Window Shortcut
-Show Desktop=Ctrl+Alt+D,Meta+D,Show Desktop
+Show Desktop=Meta+D,Meta+D,Show Desktop
 ShowDesktopGrid=Ctrl+F8,Ctrl+F8,Show Desktop Grid
 Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Suspend Compositing
-Switch One Desktop Down=none,Meta+Ctrl+Down,Switch One Desktop Down
-Switch One Desktop Up=none,Meta+Ctrl+Up,Switch One Desktop Up
+Switch One Desktop Down=,Meta+Ctrl+Down,Switch One Desktop Down
+Switch One Desktop Up=,Meta+Ctrl+Up,Switch One Desktop Up
 Switch One Desktop to the Left=Ctrl+Alt+Left,Meta+Ctrl+Left,Switch One Desktop to the Left
 Switch One Desktop to the Right=Ctrl+Alt+Right,Meta+Ctrl+Right,Switch One Desktop to the Right
 Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,Switch to Window Below
@@ -130,16 +131,16 @@ Window Grow Horizontal=none,none,Pack Grow Window Horizontally
 Window Grow Vertical=none,none,Pack Grow Window Vertically
 Window Lower=none,none,Lower Window
 Window Maximize=Ctrl+Alt+F,Meta+PgUp,Maximize Window
-Window Maximize Horizontal=Ctrl+Alt+H,none,Maximize Window Horizontally
-Window Maximize Vertical=Ctrl+Alt+V,none,Maximize Window Vertically
+Window Maximize Horizontal=none,none,Maximize Window Horizontally
+Window Maximize Vertical=none,none,Maximize Window Vertically
 Window Minimize=Meta+PgDown,Meta+PgDown,Minimize Window
 Window Move=Ctrl+Alt+M,none,Move Window
 Window No Border=none,none,Hide Window Border
 Window On All Desktops=none,none,Keep Window on All Desktops
-Window One Desktop Down=Meta+Ctrl+Shift+Down,Meta+Ctrl+Shift+Down,Window One Desktop Down
-Window One Desktop Up=Meta+Ctrl+Shift+Up,Meta+Ctrl+Shift+Up,Window One Desktop Up
-Window One Desktop to the Left=Ctrl+Alt+Shift+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
-Window One Desktop to the Right=Ctrl+Alt+Shift+Right,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
+Window One Desktop Down=none,Meta+Ctrl+Shift+Down,Window One Desktop Down
+Window One Desktop Up=none,Meta+Ctrl+Shift+Up,Window One Desktop Up
+Window One Desktop to the Left=none,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
+Window One Desktop to the Right=none,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
 Window Operations Menu=Alt+F3,Alt+F3,Window Operations Menu
 Window Pack Down=none,none,Pack Window Down
 Window Pack Left=none,none,Pack Window to the Left
@@ -150,7 +151,7 @@ Window Quick Tile Bottom Left=Ctrl+Alt+\\,,none,Quick Tile Window to the Bottom 
 Window Quick Tile Bottom Right=Ctrl+Alt+.,none,Quick Tile Window to the Bottom Right
 Window Quick Tile Left=Ctrl+Alt+K,Meta+Left,Quick Tile Window to the Left
 Window Quick Tile Right=Ctrl+Alt+L,Meta+Right,Quick Tile Window to the Right
-Window Quick Tile Top=none,Meta+Up,Quick Tile Window to the Top
+Window Quick Tile Top=Meta+Up,Meta+Up,Quick Tile Window to the Top
 Window Quick Tile Top Left=Ctrl+Alt+I,none,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=Ctrl+Alt+O,none,Quick Tile Window to the Top Right
 Window Raise=none,none,Raise Window
@@ -178,10 +179,10 @@ Window to Desktop 6=none,none,Window to Desktop 6
 Window to Desktop 7=none,none,Window to Desktop 7
 Window to Desktop 8=none,none,Window to Desktop 8
 Window to Desktop 9=none,none,Window to Desktop 9
-Window to Next Desktop=none,none,Window to Next Desktop
-Window to Next Screen=Meta+Shift+Right,Meta+Shift+Right,Window to Next Screen
-Window to Previous Desktop=none,none,Window to Previous Desktop
-Window to Previous Screen=Meta+Shift+Left,Meta+Shift+Left,Window to Previous Screen
+Window to Next Desktop=Ctrl+Alt+Shift+Right,none,Window to Next Desktop
+Window to Next Screen=,Meta+Shift+Right,Window to Next Screen
+Window to Previous Desktop=Ctrl+Alt+Shift+Left,none,Window to Previous Desktop
+Window to Previous Screen=none,Meta+Shift+Left,Window to Previous Screen
 Window to Screen 0=none,none,Window to Screen 0
 Window to Screen 1=none,none,Window to Screen 1
 Window to Screen 2=none,none,Window to Screen 2
@@ -195,6 +196,17 @@ view_actual_size=Meta+0,Meta+0,Actual Size
 view_zoom_in=Meta+=,Meta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
+[mediacontrol]
+_k_friendly_name=Media Controller
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
+nextmedia=Media Next,Media Next,Media playback next
+pausemedia=Media Pause,Media Pause,Pause media playback
+playmedia=none,none,Play media playback
+playpausemedia=Media Play,Media Play,Play/Pause media playback
+previousmedia=Media Previous,Media Previous,Media playback previous
+stopmedia=Media Stop,Media Stop,Stop media playback
+
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
 _launch=Meta+E,Meta+E,Dolphin
@@ -205,11 +217,11 @@ _launch=Meta+.,Meta+.,Emoji Selector
 
 [org.kde.spectacle.desktop]
 ActiveWindowScreenShot=Meta+Print,Meta+Print,Capture Active Window
-CurrentMonitorScreenShot=,,Capture Current Monitor
+CurrentMonitorScreenShot=,none,Capture Current Monitor
 FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
 RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
 _k_friendly_name=Spectacle
-_launch=Print,Print,Spectacle
+_launch=Print,Print,Launch Spectacle
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -225,7 +237,7 @@ Turn Off Screen=none,none,Turn Off Screen
 _k_friendly_name=Power Management
 
 [plasmashell]
-_k_friendly_name=Activity switching
+_k_friendly_name=Plasma
 activate task manager entry 1=Meta+1,Meta+1,Activate Task Manager Entry 1
 activate task manager entry 10=,Meta+0,Activate Task Manager Entry 10
 activate task manager entry 2=Meta+2,Meta+2,Activate Task Manager Entry 2
@@ -236,15 +248,19 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 107=,none,Activate Application Launcher Widget
+activate widget 24=none,none,Activate Analog Clock Widget
 activate widget 3=Alt+F1,none,Activate Application Launcher Widget
+activate widget 33=none,none,Activate Pager Widget
+activate widget 55=,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
 manage activities=Meta+Q,Meta+Q,Show Activity Switcher
-next activity=Meta+Tab,Meta+Tab,Walk through activities
-previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse)
+next activity=,none,Walk through activities
+previous activity=,none,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,none,Show Barcode...
