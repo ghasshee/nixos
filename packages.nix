@@ -23,6 +23,9 @@ let
         solc
         evmdis
         ipfs
+
+        # eth2
+        grafana # dashboard for prysm 
     ];
 
     py              = [

@@ -41,7 +41,8 @@ fi
 #        break 
 #    fi  
 #done    
-cp -r $HOME/ghasshee/nixos/.config/ ~/.config
+#cp -r $HOME/ghasshee/nixos/.config/ ~/.config
+cp -r $TGTFILE ~/.config
 }
 
 install(){
