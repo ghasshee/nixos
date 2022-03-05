@@ -1,2 +1,10 @@
 [ConfigFile]
 use=kgammarc
+
+[Screen 0]
+bgamma=0.50
+ggamma=0.70
+rgamma=0.90
+
+[SyncBox]
+sync=no

@@ -52,6 +52,7 @@ let
             hashtables
             parsec 
             deepseq   # deepseq_1_4_4_0
+            rocksdb-haskell
 
             # sheaf 
             IntervalMap 
@@ -61,6 +62,10 @@ let
             NumInstances 
             vector-space
             lens
+
+            ## Deep Learning
+            backprop
+            simple-reflect
 
             ## bitcoin 
             binary 
@@ -96,13 +101,26 @@ let
             ])) 
         ];
     ml              = with ocamlPackages; [
-        opam  #opam_1_2 
-        findlib
+          opam  #opam_1_2 
+          findlib
+          core
+          camlp5 yojson ppx_deriving_yojson
+          ocaml 
+          batteries cryptokit hex menhir
+          rpclib rope 
+          merlin 
+          labltk lablgtk 
+          why3 
         # dune-release
         # caml opam utop camlp4 findlib batteries 
         #merlin yojson ppx_deriving_yojson menhir #  to build merlin
         ]; 
     sys             = [ 
+        # hardware
+        usbutils 
+        qmk         # keyboard firmware burning tool
+
+
         patchelf
         zsh bvi tmux w3m git curl wget gnused xsel rename tree less rlwrap rename 
         jq mlocate unzip xz sl lolcat figlet man-db manpages sdcv bc acpi
@@ -114,6 +132,7 @@ let
         jid     ## json tool 
         ncurses ## terminal independent updating screen character tool
         gnome2.libgnomecanvas # used for "why" verification tool
+        sysstat  ## sar, .. 
 
     # c library 
         secp256k1 
@@ -122,6 +141,10 @@ let
         autoreconfHook 
     
     # Decentralized 
+        matrixcli       # matrix chat client ?? 
+        matrix-synapse  # matrix server 
+        matterbridge    # irc gitter matrix ... bridge
+        element-web     # matrix web client
 
         m4 bison flex patch gfortran gmm blas liblapack 
         hdf5      # unstable 
@@ -135,6 +158,9 @@ let
         cowsay
         time
         espeak
+
+
+
 
     # FEM
         gmsh     # used in sound FEM python book 
@@ -189,6 +215,9 @@ let
         jdk11 
         irssi 
         skype 
+        skypeforlinux
+        #kwallet-pam
+        #plasma5Packages.kwallet
         gnuplot
         sagemath      #sage            # Mathematica Alternative 
         jmol tachyon #3D object viewer 

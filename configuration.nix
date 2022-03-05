@@ -1,13 +1,13 @@
 # HELP          =>  $ man configuration.nix  
 # SEARCH PKGs   =>  $ nix-env -qaP | grep wget
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 with pkgs; 
 let 
 	dev 	    = "/dev/nvme0n1"; 
 	dev1	 	= "${dev}p1";
-    	dev2	 	= "${dev}p2";
-    	dev3	 	= "${dev}p3";
+    dev2	 	= "${dev}p2";
+    dev3	 	= "${dev}p3";
 	p		    = (import ./packages.nix) pkgs;
     #vim_        = vim_configurable.customize{
     #                  name = "vim-with-plugins";
@@ -71,8 +71,8 @@ in
         firewall                = {
             enable                  = false;
             allowPing               = false;
-            allowedTCPPorts         = [ 8080 ];
-            allowedUDPPorts         = [ ]; 
+            allowedTCPPorts         = [ 631 8080 ];
+            allowedUDPPorts         = [ 631 ]; 
         };
     };
     
@@ -80,6 +80,11 @@ in
         font                        = "Lat2-Terminus16"; 
         keyMap                      = "us"; 
     };
+
+    fonts.fonts = [
+      source-code-pro
+      mononoki
+    ];
     
     i18n                        =   {
         # consoleFont                 = "Lat2-Terminus16";
@@ -101,6 +106,8 @@ in
         allowBroken                 = true;
         ## firefox.icedtea             = true;
     };
+
+    # security.pam.services.lightdm.enableKwallet = true;
     
     environment                 =   {
           etc."fuse.conf".text      = ''user_allow_other'';
@@ -109,6 +116,7 @@ in
           ];
           systemPackages            = [
                 vim_  ## vim
+                emacs
                 gptfdisk ## gdisk 
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
                 flamegraph                              ## google perf & flamegraph 
@@ -121,6 +129,13 @@ in
                 plasma-workspace
                 ibus-qt
                 fuse_exfat
+                gnutar
+                archiver
+                rpm dpkg
+                rpm2targz
+
+                avahi
+
 
                 pulseaudioLight 
                 alsaUtils 
@@ -182,10 +197,23 @@ in
             };
         };
 
-        #printing                = {
-        #    enable                  = true; # enable CUPS Printing 
-        #    drivers                 = [ gutenprint hplipWithPlugin cups-bjnp cups-dymo ];
-        #};
+        printing                = {
+            enable                  = true; # enable CUPS Printing 
+            drivers                 = [ gutenprint canon-cups-ufr2 carps-cups cups-bjnp cups-zj-58];
+            browsing = true; 
+            # listenAddresses = [ "*:631" ]; 
+            # allowFrom = [ "all" ]; 
+            # defaultShared = true; 
+        };
+
+        avahi                   = {
+            enable  = true; 
+            publish = { 
+                enable = true; 
+                userServices = true; 
+            };
+        }; 
+
 
     };
 

@@ -8,6 +8,11 @@ Width 2560=594
 [General]
 Number of Actions=0
 
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Desktop/VID_20210523_110332.mp4,file:$HOME/Desktop/VID_20210523_110332.mp4,file:$HOME/Desktop/4k Führerstandsmitfahrt Karawankenbahn Jesenice - Villach BR 186-LOFYqWYuvSw.mp4
+Recent URLs[$e]=file:$HOME/Desktop/,file:$HOME/,file:$HOME/Videos/,file:$HOME/Pictures/
+detailViewIconSize=16
+
 [KPropertiesDialog]
 Height 1440=448
 Width 2560=410
@@ -18,6 +23,9 @@ History=
 
 [PlasmaRunnerManager]
 pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaTransientsConfig]
+PreloadWeight=34
 
 [PlasmaViews][Panel 106]
 panelVisibility=1
@@ -48,13 +56,13 @@ thickness=84
 thickness=84
 
 [PlasmaViews][Panel 54][Defaults]
-thickness=130
+thickness=150
 
 [PlasmaViews][Panel 54][Horizontal2560]
 thickness=106
 
 [PlasmaViews][Panel 54][Vertical1440]
-thickness=130
+thickness=150
 
 [PlasmaViews][Panel 72]
 alignment=132
