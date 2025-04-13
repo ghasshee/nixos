@@ -116,7 +116,7 @@ elif    [[ $1 == "push" ]] ; then
 elif    [[ $1 == "pull" ]] ; then 
     cd $NIX; git pull
 else
-    $NIX $@
+    $NIX $@ --extra-experimental-features nix-command
 fi
 
 
