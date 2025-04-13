@@ -1,13 +1,11 @@
 [$Version]
-update_info=spectacle_newConfig.upd:spectacle-new-config
+update_info=spectacle_newConfig.upd:spectacle-new-config,spectacle_clipboard.upd:clipboard-settings-change
 
 [GuiConfig]
-captureMode=5
-cropRegion=1352,847,1191,541
 includeDecorations=false
 onClickChecked=true
 quitAfterSaveCopyExport=true
-window-position=949,617
+window-position=910,591
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/Desktop/Screenshot_20200927_024719.png,file:$HOME/Desktop/Screenshot_20211021_211447.png,file:$HOME/Desktop/Screenshot_20211021_211329.png,file:$HOME/Desktop/Screenshot_20201004_234030.png,file:$HOME/Desktop/Screenshot_20201004_231936.png,file:$HOME/Desktop/Screenshot_20201004_231805.png
@@ -15,5 +13,5 @@ detailViewIconSize=0
 
 [Save]
 lastSaveAsLocation=file:///home/ghasshee/Desktop/pen_compiler20210123.png
-lastSaveLocation=file:///home/ghasshee/Desktop/pen_compiler20210123.png
+lastSaveLocation=file:///home/ghasshee/Screenshot_20240820_044444.png
 lastUsedSaveMode=0

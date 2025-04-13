@@ -1,10 +1,13 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup,kwin.upd:replace-cascaded-zerocornered
 
 [Compositing]
 OpenGLIsUnsafe=false
 
 [Desktops]
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
 Id_1=532e5993-19e4-41e4-92f4-7b1fd5ba1117
 Id_2=8057e5ed-42fd-4bd1-9ff7-fb12a70f5a36
 Id_3=ec56798d-430d-45fd-b8b6-d7b8df8b02c4
@@ -26,6 +29,14 @@ BorderActivateSphere=9
 BorderActivate=9
 
 [Effect-PresentWindows]
+BorderActivate=0
+BorderActivateAll=9
+BorderActivateClass=9
+
+[Effect-desktopgrid]
+BorderActivate=9
+
+[Effect-presentwindows]
 BorderActivate=0
 BorderActivateAll=9
 BorderActivateClass=9
@@ -59,6 +70,15 @@ DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 LayoutName=org.kde.breeze.desktop
 
+[Tiling]
+padding=4
+
+[Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Windows]
 ElectricBorderCooldown=350
 ElectricBorderCornerRatio=0.25
@@ -67,6 +87,9 @@ ElectricBorderMaximize=true
 ElectricBorderTiling=true
 ElectricBorders=0
 RollOverDesktops=true
+
+[Xwayland]
+Scale=1
 
 [org.kde.kdecoration2]
 BorderSize=Normal

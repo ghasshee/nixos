@@ -1,29 +1,35 @@
 [Desktop Entry]
 FullScreen=false
 
+[General]
+LockSidebar=true
+ShowSidebar=true
+
 [MainWindow]
+2048x1152 screen: XPosition=744
+2048x1152 screen: YPosition=270
 Height 1440=513
-State=AAAA/wAAAAD9AAAAAAAABK0AAAVOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAQAAAAAAAABeAAACcPwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAABMAAACcAAAAQ4BAAACAAAEJgAAAnAAAAAEAAAABAAAAAgAAAAI/AAAAAIAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 2560=1566
 Window-Maximized 1440x2560=true
+eDP-1=eDP-1
 eDP-1 Height 2560x1440=1434
 eDP-1 Width 2560x1440=1197
+eDP-1 Window-Maximized 2048x1152=true
+eDP-1 XPosition 2048x1152=120
 eDP-1 XPosition 2560x1440=154
+eDP-1 YPosition 2048x1152=0
 eDP-1 YPosition 2560x1440=2
 
 [Recent Files]
 File1[$e]=$HOME/Programs/sml/ray/out.ppm
-File2[$e]=$HOME/Desktop/Jujutsu Kaisen v01 (2019) (digital) (aKraa).cbz
-File3[$e]=$HOME/out.gif
-File4[$e]=$HOME/Downloads/[Compiler] [Optimization] 1971-allen-catalog.pdf
-File5[$e]=$HOME/Downloads/cohen.pdf
-File6[$e]=$HOME/Downloads/[Topos] [Morgan] super compacticity.pdf
-File7[$e]=$HOME/Downloads/itp13.pdf
+File2[$e]=$HOME/Downloads/Linux Kernel Development, 3rd Edition.pdf
+File3[$e]=$HOME/Digital Design and Computer Architecture RISC-V(2021).pdf
+File4[$e]=$HOME/recent.pdf
+File5[$e]=$HOME/Sumio Watanabe.pdf
 Name1[$e]=out.ppm
-Name2[$e]=Jujutsu Kaisen v01 (2019) (digital) (aKraa).cbz
-Name3[$e]=out.gif
-Name4[$e]=[Compiler] [Optimization] 1971-allen-catalog.pdf
-Name5[$e]=cohen.pdf
-Name6[$e]=[Topos] [Morgan] super compacticity.pdf
-Name7[$e]=itp13.pdf
+Name2[$e]=Linux Kernel Development, 3rd Edition.pdf
+Name3[$e]=Digital Design and Computer Architecture RISC-V(2021).pdf
+Name4[$e]=recent.pdf
+Name5[$e]=Sumio Watanabe.pdf

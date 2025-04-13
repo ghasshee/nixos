@@ -1,21 +1,47 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[Desktop Entry]
+DefaultProfile=Profile 2.profile
+
 [General]
-Version=200
+Version=202
 ViewPropsTimestamp=2020,9,25,18,8,16
 
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
 [KPropertiesDialog]
+eDP-1 Height 2048x1152=458
 eDP-1 Height 2560x1440=520
+eDP-1 Width 2048x1152=387
 eDP-1 Width 2560x1440=438
 
 [MainWindow]
+HDMI-1 Height 1536x864=864
+HDMI-1 Width 1536x864=1416
+HDMI-1 Window-Maximized 1536x864=true
+HDMI-1 XPosition 1536x864=120
+HDMI-1 YPosition 1536x864=0
 Height 1440=773
 MenuBar=Disabled
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAwAAAAAAAAC4AAAFT/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAA0AAAFTwAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAEBAAABU8AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
 Width 2560=995
+eDP-1 HDMI-1 Window-Maximized 1536x864=true
+eDP-1 HDMI-1 Window-Maximized 2048x1152=true
+eDP-1 HDMI-1 XPosition 1536x864=1404
+eDP-1 HDMI-1 XPosition 2048x1152=2039
+eDP-1 HDMI-1 YPosition 1536x864=0
+eDP-1 HDMI-1 YPosition 2048x1152=0
+eDP-1 Height 2048x1152=1152
 eDP-1 Height 2560x1440=1411
+eDP-1 Width 2048x1152=1928
 eDP-1 Width 2560x1440=1213
+eDP-1 Window-Maximized 2048x1152=true
+eDP-1 XPosition 2048x1152=120
 eDP-1 XPosition 2560x1440=1347
+eDP-1 YPosition 2048x1152=0
 eDP-1 YPosition 2560x1440=2
 
 [Open-with settings]
