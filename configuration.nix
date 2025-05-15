@@ -15,7 +15,7 @@ let
     #                      start = [ vimproc ];
     #                  };
     #              };
-    vim_          = vim_configurable.override {python = python3; };
+    # vim_          = vim_configurable.override {python = python3; };
     vaapiIntel    = pkgs.vaapiIntel.override { enableHybridCodec = true; };
 in
 {
@@ -81,9 +81,16 @@ in
         keyMap                      = "us"; 
     };
 
-    fonts.fonts = [
+    fonts.packages = [
       source-code-pro
       mononoki
+      liberation_ttf
+      fira-code
+      fira-code-symbols 
+    #  mplus-outline-fonts
+      dina-font
+      inriafonts
+      proggyfonts
     ];
     
     i18n                        =   {
@@ -91,14 +98,14 @@ in
         # consoleKeyMap               = "us";
         defaultLocale               = "en_US.UTF-8";
         inputMethod                 = {
-            enabled                     = "ibus";
-            ibus.engines                = with ibus-engines; [ anthy m17n mozc ]; 
+            enabled                     = "ibus"; 
+            ibus.engines                = with pkgs.ibus-engines; [ anthy m17n ]; 
         };
     };
 
-    nix                         =   {
-        binaryCaches                = [http://cache.nixos.org];
-        useSandbox                  = true;
+    nix.settings                =   {
+        substituters                = [http://cache.nixos.org];
+        sandbox                     = true;
     };
     
     nixpkgs.config              =   {
@@ -108,6 +115,11 @@ in
     };
 
     # security.pam.services.lightdm.enableKwallet = true;
+    documentation               =   {
+        enable                      = true;
+        man.enable                  = true; 
+        dev.enable                  = true; 
+      }; 
     
     environment                 =   {
           etc."fuse.conf".text      = ''user_allow_other'';
@@ -115,20 +127,29 @@ in
               "/share/agda"
           ];
           systemPackages            = [
-                vim_  ## vim
+                vim  ## vim
                 emacs
                 gptfdisk ## gdisk 
                 config.boot.kernelPackages.perf         ## linuxPackages.perf
                 flamegraph                              ## google perf & flamegraph 
-                xorg.xlibsWrapper xlibs.xmodmap acpilight xterm tty-clock xcalib tk tcl freeglut
+
+                # X window
+                # xorg.xlibsWrapper 
+                # xlibs.xmodmap 
+                xorg.xmodmap
+                acpilight 
+                xterm tty-clock xcalib 
+                tk tcl 
+                freeglut
                 numix-icon-theme-circle numix-gtk-theme
                 xfce.thunar-dropbox-plugin
                 xfce.xfce4-battery-plugin
                 xfce.xfce4-clipman-plugin
                 xfce.thunar-dropbox-plugin
                 plasma-workspace
-                ibus-qt
-                fuse_exfat
+                
+                # ibus-qt
+                # fuse_exfat
                 gnutar
                 archiver
                 rpm dpkg
@@ -137,7 +158,7 @@ in
                 avahi
 
 
-                pulseaudioLight 
+                # pulseaudioLight 
                 alsaUtils 
             ] ++ p;
         };
@@ -150,7 +171,7 @@ in
     services                = {
         locate                  = {
             enable                  = true;
-            locate                  = pkgs.mlocate;
+            package                 = pkgs.mlocate;
             localuser               = null; # needed so mlocate can run as root
             #interval                = "hourly" ; 
             #interval                = "00 05 * * *"; 
@@ -160,26 +181,29 @@ in
             enable                  = true;
         };
         openssh.enable          = true;
+        libinput                = {
+            enable                  = false;
+            touchpad                = {
+                naturalScrolling        = true;
+                accelSpeed              = "250";
+                accelProfile            = "flat";
+            };
+        };
+        displayManager          = {
+            autoLogin.user          = "ghasshee";
+            autoLogin.enable        = true;     
+            #lightdm.enable          = true; 
+        };
         xserver                 = {
             enable                  = true;
-            layout                  = "us";
-            xkbOptions              = "eurosign:e";
-            displayManager     = {
-                #lightdm.enable          = true; 
-                autoLogin.user          = "ghasshee";
-                autoLogin.enable        = true;     
+            xkb                     = {
+                options                 = "eurosign:e";
+                layout                  = "us";
+
             };
             desktopManager          = {
                 #xfce.enable             = true;
                 plasma5.enable          = true; 
-            };
-            libinput                = {
-                enable                  = false;
-                touchpad            = {
-                    naturalScrolling        = true;
-                    accelSpeed              = "250";
-                    accelProfile            = "flat";
-                };
             };
             synaptics               = {
                 enable                  = true;
@@ -241,7 +265,7 @@ in
                 uid                 = 1000;     };};
         };
         #extraUsers          = {};
-#    system.stateVersion = "20.03";
+    system.stateVersion = "24.05"; 
   
 }
 
